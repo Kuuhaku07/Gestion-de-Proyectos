@@ -110,7 +110,8 @@ class ProyectoDetalle(ft.Container):
         self.scroll = ft.ScrollMode.AUTO  # Habilitar scroll
         self.width = 400  # Ajustar el ancho para que coincida con ProyectoApp
         self.height = 300  # Ajustar la altura
-
+        self.border = ft.border.all(1,"black")
+        self.border_radius=ft.border_radius.all(10)
         # Establecer el borde y el fondo
         self.padding = 10  # Espaciado interno
         self.bgcolor = ft.colors.WHITE  # Color de fondo
@@ -250,6 +251,7 @@ class ProyectoApp(ft.Column):
             spacing=10,
             width=400,
             height=300,
+            
         )
 
         self.items_left = ft.Text("0 proyectos")
