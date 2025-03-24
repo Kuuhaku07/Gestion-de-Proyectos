@@ -196,17 +196,7 @@ def main(page: ft.Page):
                         icon=Icons.SETTINGS,
                         on_click=lambda _: page.go('/Configuraciones')  # Redireccionar a configuraciones
                     ),
-                    ft.Row(
-                        controls=[
-                            TextField(label="Buscar...", width=200),  # Set a specific width for the TextField
-                            ElevatedButton(
-                                text="🔍",  # Magnifying glass icon
-                                on_click=lambda _: print("Search clicked")  # Placeholder for search action
-                            )
-                        ],
-                        alignment=CrossAxisAlignment.START,
-                        spacing=10
-                    ),
+                    
                     Text("Proyectos", size=30, weight=ft.FontWeight.BOLD),
                     ft.Container(
                         content=ft.Column(
