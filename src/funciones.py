@@ -52,6 +52,10 @@ def descargar_pdf(encrypted_pdf_path, key, output_path=None):
     # Set default output path to the user's Downloads directory if not provided
     if output_path is None:
         output_path = os.path.join(os.path.expanduser("~"), "Downloads", os.path.basename(encrypted_pdf_path[:-4]))  # Remove .enc extension
+    else:
+        # Si se proporciona output_path, asegurarse de que sea un directorio y agregar el nombre del archivo
+        if os.path.isdir(output_path):
+            output_path = os.path.join(output_path, os.path.basename(encrypted_pdf_path[:-4]))  # Remove .enc extension
     
     # Read the encrypted PDF file as binary
     with open(encrypted_pdf_path, 'rb') as file:

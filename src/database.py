@@ -59,6 +59,7 @@ def inicializar_tablas():
         "tipo TEXT": "",
         "disciplina TEXT": "",
         "status TEXT": "",
+        "revision TEXT": "",
         "observaciones TEXT": ""
     })
     crear_tabla("Versiones", {
@@ -143,6 +144,19 @@ def obtener_datos_usuarios():
     
     return usuarios
 
+def eliminar_usuario(username):
+    """Elimina un usuario de la base de datos"""
+    conn = conectar_db()
+    cursor = conn.cursor()
+    try:
+        # Eliminar usuario
+        cursor.execute("DELETE FROM Usuarios WHERE username = ?", (username,))
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        raise e
+    finally:
+        conn.close()
 
 #End Region
 
@@ -235,18 +249,53 @@ def obtener_proyectos(nombre=None, codigo=None, cliente=None, sort="alfabetico",
     conn.close()
     return proyectos
 
+def eliminar_proyecto(proyecto_id):
+    conn = conectar_db()
+    cursor = conn.cursor()
+    
+    try:
+        # Primero obtenemos todos los documentos del proyecto
+        cursor.execute("SELECT id FROM Documentos WHERE proyecto_id = ?", (proyecto_id,))
+        documentos = cursor.fetchall()
+        
+        # Para cada documento, eliminamos sus versiones y fechas
+        for doc in documentos:
+            documento_id = doc[0]
+            # Eliminar fechas de las versiones del documento
+            cursor.execute("""
+                DELETE FROM Fechas 
+                WHERE version_id IN (
+                    SELECT id FROM Versiones WHERE documento_id = ?
+                )
+            """, (documento_id,))
+            
+            # Eliminar versiones del documento
+            cursor.execute("DELETE FROM Versiones WHERE documento_id = ?", (documento_id,))
+        
+        # Eliminar todos los documentos del proyecto
+        cursor.execute("DELETE FROM Documentos WHERE proyecto_id = ?", (proyecto_id,))
+        
+        # Finalmente eliminar el proyecto
+        cursor.execute("DELETE FROM Proyectos WHERE id = ?", (proyecto_id,))
+        
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        raise e
+    finally:
+        conn.close()
 
 # End Region
 
 
 # Region Documentos
 
-def crear_documento(codigo, nombre, tipo, disciplina, status, observaciones, proyecto_id):
+def crear_documento(codigo, nombre, tipo, disciplina, status, observaciones, proyecto_id, revision):
     conn = conectar_db()
     cursor = conn.cursor()
     
-    cursor.execute("INSERT INTO Documentos (codigo, nombre, tipo, disciplina, status, observaciones, proyecto_id) VALUES (?, ?, ?, ?, ?, ?, ?)", 
-                   (codigo, nombre, tipo, disciplina, status, observaciones, proyecto_id))
+    cursor.execute("INSERT INTO Documentos (codigo, nombre, tipo, disciplina, status, observaciones, proyecto_id, revision) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", 
+                   (codigo, nombre, tipo, disciplina, status, observaciones, proyecto_id, revision))
     
     conn.commit()
     conn.close()
@@ -272,12 +321,33 @@ def obtener_documentos(proyecto_id=None, status=None):
     conn.close()
     return documentos
 
-def modificar_documento(documento_id, codigo, nombre, tipo, disciplina, status, observaciones):
+def eliminar_documento(documento_id):
     conn = conectar_db()
     cursor = conn.cursor()
     
-    cursor.execute("UPDATE Documentos SET codigo = ?, nombre = ?, tipo = ?, disciplina = ?, status = ?, observaciones = ? WHERE id = ?", 
-                   (codigo, nombre, tipo, disciplina, status, observaciones, documento_id))
+    # Primero eliminamos todas las fechas asociadas a las versiones del documento
+    cursor.execute("""
+        DELETE FROM Fechas 
+        WHERE version_id IN (
+            SELECT id FROM Versiones WHERE documento_id = ?
+        )
+    """, (documento_id,))
+    
+    # Luego eliminamos todas las versiones del documento
+    cursor.execute("DELETE FROM Versiones WHERE documento_id = ?", (documento_id,))
+    
+    # Finalmente eliminamos el documento
+    cursor.execute("DELETE FROM Documentos WHERE id = ?", (documento_id,))
+    
+    conn.commit()
+    conn.close()
+
+def modificar_documento(id, codigo, nombre, tipo, disciplina, status, observaciones, revision):
+    conn = conectar_db()
+    cursor = conn.cursor()
+    
+    cursor.execute("UPDATE Documentos SET codigo = ?, nombre = ?, tipo = ?, disciplina = ?, status = ?, observaciones = ?, revision = ? WHERE id = ?", 
+                   (codigo, nombre, tipo, disciplina, status, observaciones, revision, id))
     
     conn.commit()
     conn.close()
@@ -359,6 +429,15 @@ def obtener_fechas(version_id=None):
     
     conn.close()
     return fechas
+
+def eliminar_fecha(fecha_id):
+    conn = conectar_db()
+    cursor = conn.cursor()
+    
+    cursor.execute("DELETE FROM Fechas WHERE id = ?", (fecha_id,))
+    
+    conn.commit()
+    conn.close()
 
 def modificar_fecha(fecha_id, version_id, nombre_fecha, fecha):
     conn = conectar_db()
