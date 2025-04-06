@@ -1,8 +1,19 @@
 import sqlite3
+import os
+import sys
 from funciones import hash_text, xor_encrypt_decrypt
-def conectar_db():
-    conn = sqlite3.connect('../data/documentos.db')
 
+def conectar_db():
+    # Ruta relativa al ejecutable (../data/documentos.db)
+    if getattr(sys, 'frozen', False):
+        base_path = os.path.dirname(sys.executable)
+    else:
+        base_path = os.path.dirname(os.path.abspath(__file__))
+    
+    db_path = os.path.join(base_path, 'data/documentos.db')
+    os.makedirs(os.path.dirname(db_path), exist_ok=True)
+    
+    conn = sqlite3.connect(db_path)
     return conn
 
 
