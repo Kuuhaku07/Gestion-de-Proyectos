@@ -1581,37 +1581,45 @@ class VersionDetalle(ft.Container):
         self.content = self.main_column
 
     def cargar_fechas(self, version_id):
-        # Aquí cargaremos las fechas de la versión desde la base de datos
+        # Verificar y crear fechas fijas si no existen
+        self.verificar_fechas_fijas(version_id)
+        
+        # Cargar todas las fechas incluyendo las fijas
         fechas = obtener_fechas(version_id)
         fechas_list = self.dates_section.content.controls[1]
         fechas_list.controls.clear()
         
         for fecha in fechas:
+            es_fecha_fija = fecha[2] in ["Fecha de Emisión", "Fecha de Recepción"]
             fecha_container = ft.Container(
                 content=ft.Row(
                     controls=[
                         ft.Text(
-                            value=fecha[2],  # fecha[2] es el nombre_fecha
+                            value=fecha[2],
                             size=TEXTO_NORMAL,
-                            color=COLOR_TEXTO,
-                            width=100
+                            color=COLOR_PRIMARIO if es_fecha_fija else COLOR_TEXTO,
+                            width=100,
+                            weight=ft.FontWeight.BOLD if es_fecha_fija else None
                         ),
                         ft.TextField(
-                            value=fecha[3],  # fecha[3] es la fecha
+                            value=fecha[3],
                             disabled=True,
-                            border_color=COLOR_BORDE,
+                            border_color=COLOR_PRIMARIO if es_fecha_fija else COLOR_BORDE,
                             text_size=TEXTO_NORMAL,
                             width=120
                         ),
                         ft.IconButton(
                             icon=ft.icons.CALENDAR_MONTH,
-                            icon_color=COLOR_BOTON,
+                            icon_color=COLOR_PRIMARIO if es_fecha_fija else COLOR_BOTON,
                             on_click=lambda e, f=fecha: self.abrir_calendario_fecha(e, f[0], f[2], f[3])
                         ),
-                        ft.IconButton(
-                            icon=ft.icons.DELETE,
-                            icon_color=COLOR_ERROR,
-                            on_click=lambda e, f=fecha: self.eliminar_fecha(e, f[0])
+                        ft.Container(
+                            visible=fecha[2] not in ["Fecha de Emisión", "Fecha de Recepción"],
+                            content=ft.IconButton(
+                                icon=ft.icons.DELETE,
+                                icon_color=COLOR_ERROR,
+                                on_click=lambda e, f=fecha: self.eliminar_fecha(e, f[0])
+                            )
                         )
                     ],
                     spacing=ESPACIADO_NORMAL
@@ -1620,6 +1628,25 @@ class VersionDetalle(ft.Container):
             fechas_list.controls.append(fecha_container)
         
         self.update()
+
+    def verificar_fechas_fijas(self, version_id):
+        """Verifica que las fechas fijas existan, si no las crea"""
+        fechas = obtener_fechas(version_id)
+        nombres_fechas = [f[2] for f in fechas]
+        
+        if "Fecha de Emisión" not in nombres_fechas:
+            crear_fecha(
+                version_id=version_id,
+                nombre_fecha="Fecha de Emisión",
+                fecha=datetime.datetime.now().strftime('%Y-%m-%d')
+            )
+            
+        if "Fecha de Recepción" not in nombres_fechas:
+            crear_fecha(
+                version_id=version_id,
+                nombre_fecha="Fecha de Recepción",
+                fecha=datetime.datetime.now().strftime('%Y-%m-%d')
+            )
 
     def abrir_calendario_fecha(self, e, fecha_id, nombre_fecha, fecha_actual):
         # Crear campo para la fecha
@@ -1763,14 +1790,17 @@ class VersionDetalle(ft.Container):
         # Recargar las fechas para actualizar la vista
         self.cargar_fechas(self.current_version_id)
 
-    def mostrar_detalles(self, id_version, nombre_version, status, archivo,transmitall):
+    def mostrar_detalles(self, id_version, nombre_version, status, archivo, transmitall):
         self.details_column.controls.clear()
         self.initial_message.visible = False
         self.current_version_id = id_version
         self.current_version_name = nombre_version
         self.current_version_status = status
         self.current_document_id = self.current_document_id if hasattr(self, 'current_document_id') else None
-        self.current_transmitall=transmitall
+        self.current_transmitall = transmitall
+        
+        # Asegurarse que las fechas fijas existen antes de cargar
+        self.verificar_fechas_fijas(id_version)
         
         # Sección 1: Información básica
         self.info_section = ft.Container(

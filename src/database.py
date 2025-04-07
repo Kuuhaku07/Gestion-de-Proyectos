@@ -373,8 +373,16 @@ def crear_version(documento_id, nombre_version, status, archivo, transmitall="")
     conn = conectar_db()
     cursor = conn.cursor()
     
+    # Crear la versión
     cursor.execute("INSERT INTO Versiones (documento_id, nombre_version, status, archivo, transmitall) VALUES (?, ?, ?, ?, ?)", 
                    (documento_id, nombre_version, status, archivo, transmitall))
+    version_id = cursor.lastrowid
+    
+    # Crear fechas predeterminadas
+    cursor.execute("INSERT INTO Fechas (version_id, nombre_fecha) VALUES (?, ?)", 
+                   (version_id, "Fecha de Emisión"))
+    cursor.execute("INSERT INTO Fechas (version_id, nombre_fecha) VALUES (?, ?)", 
+                   (version_id, "Fecha de Recepción"))
     
     conn.commit()
     conn.close()

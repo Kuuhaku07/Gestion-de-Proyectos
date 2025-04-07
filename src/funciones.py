@@ -71,13 +71,4 @@ def descargar_pdf(encrypted_pdf_path, key, output_path=None):
     return output_path
 if __name__ == "__main__":
     # Test the generar_clave function
-    # almacenar_pdf("../Git-Cheat-Sheet-EN.pdf","patatito")
-    # Path to the encrypted PDF file
-    encrypted_pdf_path = '../data/pdf/Git-Cheat-Sheet-EN.pdf.enc'
-
-    # Sample key for decryption (use the same key that was used for encryption)
-    decryption_key = 'patatito'  # Replace with the actual key used
-
-    # Call the descargar_pdf function
-    descargar_pdf(encrypted_pdf_path, decryption_key)
- 
+    pass
