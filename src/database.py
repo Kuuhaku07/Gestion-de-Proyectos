@@ -78,7 +78,8 @@ def inicializar_tablas():
         "documento_id INTEGER": "REFERENCES Documentos(id)",
         "nombre_version TEXT": "",
         "status TEXT": "", 
-        "archivo TEXT": ""
+        "archivo TEXT": "",
+        "transmitall TEXT": ""
     })
     crear_tabla("Fechas", {
         "id INTEGER PRIMARY KEY": "",
@@ -368,12 +369,12 @@ def modificar_documento(id, codigo, nombre, tipo, disciplina, status, observacio
 
 # Region Versiones
 
-def crear_version(documento_id, nombre_version, status, archivo):
+def crear_version(documento_id, nombre_version, status, archivo, transmitall=""):
     conn = conectar_db()
     cursor = conn.cursor()
     
-    cursor.execute("INSERT INTO Versiones (documento_id, nombre_version, status, archivo) VALUES (?, ?, ?, ?)", 
-                   (documento_id, nombre_version, status, archivo))
+    cursor.execute("INSERT INTO Versiones (documento_id, nombre_version, status, archivo, transmitall) VALUES (?, ?, ?, ?, ?)", 
+                   (documento_id, nombre_version, status, archivo, transmitall))
     
     conn.commit()
     conn.close()
@@ -399,12 +400,16 @@ def obtener_versiones(documento_id=None, status=None):
     conn.close()
     return versiones
 
-def modificar_version(version_id, documento_id, nombre_version, status, archivo):
+def modificar_version(version_id, documento_id, nombre_version, status, archivo, transmitall=None):
     conn = conectar_db()
     cursor = conn.cursor()
     
-    cursor.execute("UPDATE Versiones SET documento_id = ?, nombre_version = ?, status = ?, archivo = ? WHERE id = ?", 
-                   (documento_id, nombre_version, status, archivo, version_id))
+    if transmitall is not None:
+        cursor.execute("UPDATE Versiones SET documento_id = ?, nombre_version = ?, status = ?, archivo = ?, transmitall = ? WHERE id = ?", 
+                       (documento_id, nombre_version, status, archivo, transmitall, version_id))
+    else:
+        cursor.execute("UPDATE Versiones SET documento_id = ?, nombre_version = ?, status = ?, archivo = ? WHERE id = ?", 
+                       (documento_id, nombre_version, status, archivo, version_id))
     
     conn.commit()
     conn.close()
@@ -466,7 +471,7 @@ def obtener_versiones_con_fechas(version_id):
     
     # Query to get version data and associated dates
     query = """
-    SELECT v.id, v.documento_id, v.nombre_version, v.status, v.archivo, 
+    SELECT v.id, v.documento_id, v.nombre_version, v.status, v.archivo, v.transmitall,
            f.nombre_fecha, f.fecha 
     FROM Versiones v 
     LEFT JOIN Fechas f ON v.id = f.version_id
@@ -480,7 +485,7 @@ def obtener_versiones_con_fechas(version_id):
     
     # Organizing the results
     if resultados:
-        version_data = resultados[0][:5]  # Version data
+        version_data = resultados[0][:6]  # Version data including transmitall
         fechas_data = [{"nombre_fecha": row[5], "fecha": row[6]} for row in resultados if row[5] is not None]
         return [version_data, fechas_data]
     

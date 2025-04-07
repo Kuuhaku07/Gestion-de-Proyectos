@@ -566,6 +566,7 @@ class Documento(ft.Column):
                 id=version_data[0],
                 nombre_version=version_data[2],
                 status=version_data[3],
+                transmitall=version_data[5],
                 archivo=version_data[4],
                 version_detalle=self.version_detalle,  # Pasar la referencia a VersionDetalle
                 documento_id=version_data[1]  # Pasar el documento_id de la versión
@@ -605,6 +606,14 @@ class Documento(ft.Column):
             text_size=TEXTO_NORMAL,
             width=350
         )
+        transmitall_field = ft.TextField(
+            label="Transmitall",
+            border_color=COLOR_BORDE,
+            focused_border_color=COLOR_PRIMARIO,
+            text_size=TEXTO_NORMAL,
+            width=350,
+            visible=True
+        )
 
         warning_signal = ft.Container(
             content=ft.Column(
@@ -630,6 +639,7 @@ class Documento(ft.Column):
             on_click=lambda e: self.submit_version_data(
                 nombre_version_field.value,
                 status_field.value,
+                transmitall_field.value,
                 warning_signal,
                 dlg
             )
@@ -653,7 +663,8 @@ class Documento(ft.Column):
                             controls=[
                                 warning_signal,
                                 nombre_version_field,
-                                status_field
+                                status_field,
+                                transmitall_field
                             ],
                             spacing=ESPACIADO_NORMAL,
                             alignment=ft.MainAxisAlignment.CENTER,
@@ -672,8 +683,8 @@ class Documento(ft.Column):
         )
         dlg.open(self.page)
 
-    def submit_version_data(self, nombre_version, status, warning_signal, dlg):
-        if not nombre_version or not status:
+    def submit_version_data(self, nombre_version, status,transmitall, warning_signal, dlg):
+        if not nombre_version or not status or not transmitall:
             warning_signal.visible = True
             self.page.update()
         else:
@@ -682,7 +693,8 @@ class Documento(ft.Column):
                 documento_id=self.id,
                 nombre_version=nombre_version,
                 status=status,
-                archivo=""  # Por ahora dejamos el archivo vacío
+                archivo="",  # Por ahora dejamos el archivo vacío
+                transmitall=transmitall
             )
             dlg.close(self.page)
             # Recargar las versiones
@@ -974,16 +986,7 @@ class DocumentosApp(ft.Column):
         self.documents.controls.clear()
         
         for doc_data in documentos:
-            # Los índices coinciden con la estructura de la tabla Documentos:
-            # 0: id
-            # 1: proyecto_id
-            # 2: codigo
-            # 3: nombre
-            # 4: tipo
-            # 5: disciplina
-            # 6: status
-            # 7: revision
-            # 8: observaciones
+            
             documento = Documento(
                 id=doc_data[0],
                 codigo=doc_data[2],
@@ -1003,11 +1006,12 @@ class DocumentosApp(ft.Column):
         self.update()
 
 class Version(ft.Column):
-    def __init__(self, id, nombre_version, status, archivo, version_detalle, documento_id):
+    def __init__(self, id, nombre_version, status,transmitall, archivo, version_detalle, documento_id):
         super().__init__()
         self.id = id
         self.nombre_version = nombre_version
         self.status = status
+        self.transmitall=transmitall
         self.archivo = archivo
         self.version_detalle = version_detalle  # Referencia a VersionDetalle
         self.documento_id = documento_id  # Guardar el ID del documento
@@ -1036,7 +1040,7 @@ class Version(ft.Column):
         # Establecer el documento_id en VersionDetalle antes de mostrar los detalles
         self.version_detalle.current_document_id = self.documento_id
         # Mostrar detalles de la versión seleccionada
-        self.version_detalle.mostrar_detalles(self.id, self.nombre_version, self.status, self.archivo)
+        self.version_detalle.mostrar_detalles(self.id, self.nombre_version, self.status, self.archivo,self.transmitall)
 
     def on_hover(self, e):
         self.display_version.bgcolor = COLOR_VERSION_HOVER if e.data == "true" else COLOR_VERSION
@@ -1759,13 +1763,14 @@ class VersionDetalle(ft.Container):
         # Recargar las fechas para actualizar la vista
         self.cargar_fechas(self.current_version_id)
 
-    def mostrar_detalles(self, id_version, nombre_version, status, archivo):
+    def mostrar_detalles(self, id_version, nombre_version, status, archivo,transmitall):
         self.details_column.controls.clear()
         self.initial_message.visible = False
         self.current_version_id = id_version
         self.current_version_name = nombre_version
         self.current_version_status = status
         self.current_document_id = self.current_document_id if hasattr(self, 'current_document_id') else None
+        self.current_transmitall=transmitall
         
         # Sección 1: Información básica
         self.info_section = ft.Container(
@@ -1788,6 +1793,7 @@ class VersionDetalle(ft.Container):
                     ),
                     ft.Text(f"Nombre: {nombre_version}", size=TEXTO_NORMAL, color=COLOR_TEXTO),
                     ft.Text(f"Estado: {status}", size=TEXTO_NORMAL, color=COLOR_TEXTO),
+                    ft.Text(f"Transmitall: {transmitall}", size=TEXTO_NORMAL, color=COLOR_TEXTO),
                 ],
                 spacing=ESPACIADO_NORMAL
             )
@@ -1913,7 +1919,8 @@ class VersionDetalle(ft.Container):
                 documento_id=self.current_document_id,
                 nombre_version=self.current_version_name,
                 status=self.current_version_status,
-                archivo=nuevo_nombre
+                archivo=nuevo_nombre,
+                transmitall=self.current_transmitall
             )
             
             # Actualizar la vista
@@ -1921,7 +1928,8 @@ class VersionDetalle(ft.Container):
                 version_id,
                 self.current_version_name,
                 self.current_version_status,
-                nuevo_nombre
+                nuevo_nombre,
+                self.current_transmitall
             )
 
     def descargar_pdf(self, e, archivo):
@@ -1979,6 +1987,14 @@ class VersionDetalle(ft.Container):
             text_size=TEXTO_NORMAL,
             width=350
         )
+        transmitall_field = ft.TextField(
+            label="Transmitall",
+            value=self.current_transmitall,
+            border_color=COLOR_BORDE,
+            focused_border_color=COLOR_PRIMARIO,
+            text_size=TEXTO_NORMAL,
+            width=350
+        )
 
         warning_signal = ft.Container(
             content=ft.Column(
@@ -2004,6 +2020,7 @@ class VersionDetalle(ft.Container):
             on_click=lambda e: self.submit_version_edit(
                 nombre_version_field.value,
                 status_field.value,
+                transmitall_field.value,
                 warning_signal,
                 dlg
             )
@@ -2027,7 +2044,8 @@ class VersionDetalle(ft.Container):
                             controls=[
                                 warning_signal,
                                 nombre_version_field,
-                                status_field
+                                status_field,
+                                transmitall_field
                             ],
                             spacing=ESPACIADO_NORMAL,
                             alignment=ft.MainAxisAlignment.CENTER,
@@ -2046,7 +2064,7 @@ class VersionDetalle(ft.Container):
         )
         dlg.open(self.page)
 
-    def submit_version_edit(self, nombre_version, status, warning_signal, dlg):
+    def submit_version_edit(self, nombre_version, status,transmitall, warning_signal, dlg):
         if not nombre_version or not status:
             warning_signal.visible = True
             self.page.update()
@@ -2058,7 +2076,8 @@ class VersionDetalle(ft.Container):
                 documento_id=self.current_document_id,
                 nombre_version=nombre_version,
                 status=status,
-                archivo=self.current_version_archivo if hasattr(self, 'current_version_archivo') else ""
+                archivo=self.current_version_archivo if hasattr(self, 'current_version_archivo') else "",
+                transmitall=transmitall
             )
             dlg.close(self.page)
             # Actualizar la vista con los nuevos datos
@@ -2066,7 +2085,8 @@ class VersionDetalle(ft.Container):
                 self.current_version_id,
                 nombre_version,
                 status,
-                self.current_version_archivo if hasattr(self, 'current_version_archivo') else ""
+                self.current_version_archivo if hasattr(self, 'current_version_archivo') else "",
+                transmitall
             )
 
     def agregar_fecha(self, e, version_id):
