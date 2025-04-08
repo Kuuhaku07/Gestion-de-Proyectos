@@ -74,7 +74,7 @@ def descargar_pdf(encrypted_pdf_path, key, output_path=None):
         file.write(decrypted_data.encode('latin-1'))  # Encode back to bytes for saving
     
     return output_path
-def generar_reporte_proyecto(proyecto_id):
+def generar_reporte_proyecto(proyecto_id, output_path=os.path.join(os.path.expanduser("~"), "Downloads")):
     """Genera un PDF con información de documentos de un proyecto"""
     # Crear documento en orientación horizontal (landscape)
     from reportlab.lib.pagesizes import landscape
@@ -88,7 +88,10 @@ def generar_reporte_proyecto(proyecto_id):
     
     proyecto = datos_proyecto['proyecto']
     nombre_archivo = f"{proyecto[5]}_{proyecto[1]}.pdf".replace(" ", "_")
-    doc = SimpleDocTemplate(nombre_archivo, pagesize=landscape(letter))
+    ruta_completa = os.path.join(output_path, nombre_archivo)
+    # Crear directorio si no existe
+    os.makedirs(output_path, exist_ok=True)
+    doc = SimpleDocTemplate(ruta_completa, pagesize=landscape(letter))
     elements = []
     
     # Estilos
