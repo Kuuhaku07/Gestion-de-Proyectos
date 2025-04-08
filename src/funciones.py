@@ -312,14 +312,123 @@ def generar_reporte_proyecto(proyecto_id, output_path=os.path.join(os.path.expan
     # Generar PDF
     try:
         doc.build(elements)
-        return nombre_archivo
+        return ruta_completa
     except Exception as e:
         print(f"Error al generar el PDF: {e}")
         return None
 
+
+
+
+
+
+
+def generar_reporte_rev0(proyecto_id, output_path=os.path.join(os.path.expanduser("~"), "Downloads")):
+    """Genera un PDF con documentos en Rev 0 y porcentaje de completitud"""
+    from reportlab.lib.pagesizes import landscape
+    from database import obtener_proyecto_completo
+    
+    # Obtener datos del proyecto (igual que en la otra función)
+    datos_proyecto = obtener_proyecto_completo(proyecto_id)
+    if not datos_proyecto:
+        print(f"Error: No se encontró el proyecto con ID {proyecto_id}")
+        return None
+    
+    proyecto = datos_proyecto['proyecto']
+    nombre_archivo = f"Rev0_{proyecto[5]}_{proyecto[1]}.pdf".replace(" ", "_")
+    ruta_completa = os.path.join(output_path, nombre_archivo)
+    os.makedirs(output_path, exist_ok=True)
+    
+    # Crear documento (igual que en la otra función)
+    doc = SimpleDocTemplate(ruta_completa, pagesize=landscape(letter))
+    elements = []
+    styles = getSampleStyleSheet()
+
+    # Filtrar solo documentos en Rev 0
+    docs_rev0 = [d for d in datos_proyecto['documentos'] if d['documento'][7] == 'Rev 0']
+    total_docs = len(datos_proyecto['documentos'])
+    porcentaje = (len(docs_rev0) / total_docs) * 100 if total_docs > 0 else 0
+
+    # Encabezado (similar pero específico para Rev 0)
+    try:
+        logo = Image("logo_pdvsa.png", width=1.5*inch, height=0.75*inch)
+        if not os.path.exists("logo_pdvsa.png"):
+            raise FileNotFoundError
+        header_table = Table([
+            [logo, Paragraph("PDVSA<br/>Reporte Rev 0", styles['Heading2'])]
+        ], colWidths=[2*inch, 6*inch])
+        elements.append(header_table)
+    except Exception as e:
+        header_style = styles['Heading1']
+        header_style.textColor = colors.HexColor('#CC0000')
+        header = Paragraph("PDVSA - Reporte Rev 0", header_style)
+        elements.append(header)
+    
+    elements.append(Spacer(1, 0.1*inch))
+    elements.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor('#CC0000'), spaceBefore=5, spaceAfter=15))
+    
+    # Título del reporte
+    titulo_style = styles['Heading1']
+    titulo_style.textColor = colors.HexColor('#003366')
+    titulo_style.alignment = 1
+    titulo = Paragraph(f"Reporte Rev 0: {proyecto[5]} - {proyecto[1]}", titulo_style)
+    elements.append(titulo)
+    
+    # Porcentaje de completitud
+    porcentaje_style = styles['Heading2']
+    porcentaje_style.textColor = colors.HexColor('#006600')
+    elements.append(Paragraph(f"Porcentaje completado: {porcentaje:.1f}%", porcentaje_style))
+    elements.append(Spacer(1, 0.3*inch))
+    
+    # Tabla de documentos con ambas fechas
+    encabezados = ["Código", "Nombre", "Disciplina", "Emisión", "Recepción"]
+    data = [encabezados]
+    
+    for doc_data in docs_rev0:
+        documento = doc_data['documento']
+        # Buscar ambas fechas (igual que en generar_reporte_proyecto)
+        fecha_emision = fecha_recepcion = None
+        if doc_data['versiones']:
+            for version in doc_data['versiones']:
+                for fecha in version['fechas']:
+                    if fecha[2] == "Fecha de Emisión":
+                        fecha_emision = fecha[3]
+                    elif fecha[2] == "Fecha de Recepción":
+                        fecha_recepcion = fecha[3]
+        
+        data.append([
+            Paragraph(f"{proyecto[5]}-{documento[2]}", styles['Normal']),
+            Paragraph(documento[3], styles['Normal']),
+            Paragraph(documento[5], styles['Normal']),
+            Paragraph(fecha_emision or "-", styles['Normal']),
+            Paragraph(fecha_recepcion or "-", styles['Normal'])
+        ])
+    
+    tabla = Table(data, colWidths=[1.5*inch, 3*inch, 1.5*inch, 1.2*inch, 1.2*inch])
+    estilo_tabla = TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.lightgrey),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.black),
+        ('ALIGN', (0,0), (-1,-1), 'CENTER'),
+        ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0,0), (-1,0), 10),
+        ('BOTTOMPADDING', (0,0), (-1,0), 12),
+        ('GRID', (0,0), (-1,-1), 1, colors.black)
+    ])
+    tabla.setStyle(estilo_tabla)
+    elements.append(tabla)
+    
+    # Generar PDF (igual que en la otra función)
+    try:
+        doc.build(elements)
+        return ruta_completa
+    except Exception as e:
+        print(f"Error al generar el PDF: {e}")
+        return None
+    
+
 if __name__ == "__main__":
     # Test PDF generation with sample project ID
-    result = generar_reporte_proyecto(1)
+    result = generar_reporte_rev0(1)
     if result:
         print(f"Reporte de proyecto generado como '{result}'")
     else:

@@ -64,12 +64,93 @@ class Proyecto(ft.Column):
         return f"{self.codigo_proyecto} - {self.nombre}"
 
     def download_clicked(self, e):
-        dlg = ReusableModal(
-            title="Descargando",
-            content=f"Descargando: {self.nombre}",
-            actions=[ft.TextButton("Close", on_click=lambda e: dlg.close(self.page))],
-            modal=False
+        # Crear botones para cada tipo de reporte
+        full_report_btn = ft.TextButton(
+            "Reporte Completo",
+            style=ft.ButtonStyle(
+                color=COLOR_TEXTO_BOTON,
+                bgcolor=COLOR_BOTON
+            ),
+            on_click=lambda e: self.download_full_report(e)
         )
+        
+        rev0_report_btn = ft.TextButton(
+            "Reporte Rev 0",
+            style=ft.ButtonStyle(
+                color=COLOR_TEXTO_BOTON,
+                bgcolor=COLOR_PRIMARIO
+            ),
+            on_click=lambda e: self.download_rev0_report(e)
+        )
+        
+        cancel_btn = ft.TextButton(
+            "Cancelar",
+            style=ft.ButtonStyle(
+                color=COLOR_TEXTO_BOTON,
+                bgcolor=COLOR_ERROR
+            ),
+            on_click=lambda e: dlg.close(self.page)
+        )
+        
+        dlg = ReusableModal(
+            title="Tipo de Reporte",
+            content="Seleccione el tipo de reporte a descargar:",
+            actions=[
+                ft.Row([full_report_btn, rev0_report_btn], spacing=ESPACIADO_NORMAL),
+                cancel_btn
+            ],
+            modal=True
+        )
+        dlg.open(self.page)
+    
+    def download_full_report(self, e):
+        # Cerrar el modal primero
+        for control in self.page.controls:
+            if isinstance(control, ft.AlertDialog):
+                self.page.close(control)
+                break
+        
+        # Generar y descargar reporte completo
+        result = generar_reporte_proyecto(self.id)
+        if result:
+            dlg = ReusableModal(
+                title="Descarga Exitosa",
+                content=f"Reporte completo generado en:\n{result}",
+                actions=[ft.TextButton("OK", on_click=lambda e: dlg.close(self.page))],
+                modal=True
+            )
+        else:
+            dlg = ReusableModal(
+                title="Error",
+                content="No se pudo generar el reporte completo",
+                actions=[ft.TextButton("OK", on_click=lambda e: dlg.close(self.page))],
+                modal=True
+            )
+        dlg.open(self.page)
+    
+    def download_rev0_report(self, e):
+        # Cerrar el modal primero
+        for control in self.page.controls:
+            if isinstance(control, ft.AlertDialog):
+                self.page.close(control)
+                break
+        
+        # Generar y descargar reporte Rev 0
+        result = generar_reporte_rev0(self.id)
+        if result:
+            dlg = ReusableModal(
+                title="Descarga Exitosa",
+                content=f"Reporte Rev 0 generado en:\n{result}",
+                actions=[ft.TextButton("OK", on_click=lambda e: dlg.close(self.page))],
+                modal=True
+            )
+        else:
+            dlg = ReusableModal(
+                title="Error",
+                content="No se pudo generar el reporte Rev 0",
+                actions=[ft.TextButton("OK", on_click=lambda e: dlg.close(self.page))],
+                modal=True
+            )
         dlg.open(self.page)
 
     def delete_clicked(self, e):
