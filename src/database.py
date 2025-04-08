@@ -501,34 +501,111 @@ def obtener_versiones_con_fechas(version_id):
 
 # End Region
 
+def obtener_proyecto_completo(proyecto_id):
+    """Obtiene todos los datos de un proyecto incluyendo documentos, versiones y fechas"""
+    conn = conectar_db()
+    cursor = conn.cursor()
+    
+    # Obtener datos del proyecto
+    cursor.execute("SELECT * FROM Proyectos WHERE id = ?", (proyecto_id,))
+    proyecto = cursor.fetchone()
+    
+    if not proyecto:
+        conn.close()
+        return None
+    
+    # Obtener documentos del proyecto
+    cursor.execute("SELECT * FROM Documentos WHERE proyecto_id = ?", (proyecto_id,))
+    documentos = cursor.fetchall()
+    
+    resultado = {
+        'proyecto': proyecto,
+        'documentos': []
+    }
+    
+    # Para cada documento, obtener sus versiones y fechas
+    for doc in documentos:
+        documento_id = doc[0]
+        
+        # Obtener versiones del documento
+        cursor.execute("SELECT * FROM Versiones WHERE documento_id = ?", (documento_id,))
+        versiones = cursor.fetchall()
+        
+        doc_data = {
+            'documento': doc,
+            'versiones': []
+        }
+        
+        for version in versiones:
+            version_id = version[0]
+            
+            # Obtener fechas de la versión
+            cursor.execute("SELECT * FROM Fechas WHERE version_id = ?", (version_id,))
+            fechas = cursor.fetchall()
+            
+            doc_data['versiones'].append({
+                'version': version,
+                'fechas': fechas
+            })
+        
+        resultado['documentos'].append(doc_data)
+    
+    conn.close()
+    return resultado
+
 
 if __name__ == "__main__":
-    #pruebas
+    # Prueba detallada de la función obtener_proyecto_completo
+    print("\n=== PRUEBA DETALLADA DE OBTENER_PROYECTO_COMPLETO ===")
     
-
-    # Modify the empty date with id = 3 to add a new value
-    modificar_fecha(3, 1, "Fecha Ahora no vacia", "2023-10-15")
-    print("Fecha modificada para id = 3.")
-    # Retrieve versions with their associated dates
-     # Test the function to get versions with dates for version_id = 1
-    versiones_con_fechas = obtener_versiones_con_fechas(1)
-    print("Versiones con fechas para version_id = 1:")
+    # Probar con proyecto_id = 1
+    proyecto_id = 1
+    datos = obtener_proyecto_completo(proyecto_id)
     
-    if versiones_con_fechas:
-        version_data = versiones_con_fechas[0]  # Version data
-        fechas_data = versiones_con_fechas[1]  # Dates data
+    if datos:
+        # Mostrar todos los campos del proyecto
+        print("\n=== DATOS DEL PROYECTO ===")
+        print(f"ID: {datos['proyecto'][0]}")
+        print(f"Nombre: {datos['proyecto'][1]}")
+        print(f"Fecha inicio: {datos['proyecto'][2]}")
+        print(f"Fecha fin: {datos['proyecto'][3]}")
+        print(f"Cliente: {datos['proyecto'][4]}")
+        print(f"Código: {datos['proyecto'][5]}")
         
-        # Print version details
-        print("Datos de la versión:")
-        print(f"ID: {version_data[0]}")
-        print(f"Documento ID: {version_data[1]}")
-        print(f"Nombre de la versión: {version_data[2]}")
-        print(f"Status: {version_data[3]}")
-        print(f"Archivo: {version_data[4]}")
-        
-        # Print associated dates
-        print("Fechas asociadas:")
-        for fecha in fechas_data:
-            print(f"Nombre de la fecha: {fecha['nombre_fecha']}, Fecha: {fecha['fecha']}")
+        # Mostrar todos los documentos con todos sus campos
+        print("\n=== DOCUMENTOS ===")
+        for i, doc in enumerate(datos['documentos']):
+            print(f"\nDocumento {i+1}:")
+            print(f"ID: {doc['documento'][0]}")
+            print(f"Proyecto ID: {doc['documento'][1]}")
+            print(f"Código: {doc['documento'][2]}")
+            print(f"Nombre: {doc['documento'][3]}")
+            print(f"Tipo: {doc['documento'][4]}")
+            print(f"Disciplina: {doc['documento'][5]}")
+            print(f"Status: {doc['documento'][6]}")
+            print(f"Revisión: {doc['documento'][7]}")
+            print(f"Observaciones: {doc['documento'][8]}")
+            
+            # Mostrar todas las versiones
+            print(f"\n  Versiones ({len(doc['versiones'])}):")
+            for j, version in enumerate(doc['versiones']):
+                print(f"\n  Versión {j+1}:")
+                print(f"  ID: {version['version'][0]}")
+                print(f"  Documento ID: {version['version'][1]}")
+                print(f"  Nombre: {version['version'][2]}")
+                print(f"  Status: {version['version'][3]}")
+                print(f"  Archivo: {version['version'][4]}")
+                print(f"  Transmittal: {version['version'][5]}")
+                
+                # Mostrar todas las fechas
+                print("\n    Fechas:")
+                for fecha in version['fechas']:
+                    print(f"    ID: {fecha[0]}")
+                    print(f"    Versión ID: {fecha[1]}")
+                    print(f"    Nombre: {fecha[2]}")
+                    print(f"    Fecha: {fecha[3]}")
+                    print("    ---")
     else:
-        print("No se encontraron datos para la versión especificada.")
+        print(f"No se encontró el proyecto con ID {proyecto_id}")
+        
+    print("\nPrueba completada. Todos los campos mostrados.")

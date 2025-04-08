@@ -3,6 +3,11 @@ import string
 import hashlib
 import os
 import shutil
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, HRFlowable, Image
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.units import inch
 
 def hash_text(text):
     encoded_text = text.encode()
@@ -69,6 +74,250 @@ def descargar_pdf(encrypted_pdf_path, key, output_path=None):
         file.write(decrypted_data.encode('latin-1'))  # Encode back to bytes for saving
     
     return output_path
+def generar_reporte_proyecto(proyecto_id):
+    """Genera un PDF con información de documentos de un proyecto"""
+    # Crear documento en orientación horizontal (landscape)
+    from reportlab.lib.pagesizes import landscape
+    from database import obtener_proyecto_completo
+    # Obtener datos del proyecto
+    
+    datos_proyecto = obtener_proyecto_completo(proyecto_id)
+    if not datos_proyecto:
+        print(f"Error: No se encontró el proyecto con ID {proyecto_id}")
+        return None
+    
+    proyecto = datos_proyecto['proyecto']
+    nombre_archivo = f"{proyecto[5]}_{proyecto[1]}.pdf".replace(" ", "_")
+    doc = SimpleDocTemplate(nombre_archivo, pagesize=landscape(letter))
+    elements = []
+    
+    # Estilos
+    styles = getSampleStyleSheet()
+    
+
+    if not datos_proyecto:
+        print(f"Error: No se encontró el proyecto con ID {proyecto_id}")
+        return None
+    
+    proyecto = datos_proyecto['proyecto']
+    
+    # Encabezado con manejo robusto de errores para el logo
+    try:
+        logo = Image("logo_pdvsa.png", width=1.5*inch, height=0.75*inch)
+        # Verificar que el archivo existe realmente
+        if not os.path.exists("logo_pdvsa.png"):
+            raise FileNotFoundError
+        header_table = Table([
+            [logo, Paragraph("PDVSA<br/>Sistema de Gestión Documental", styles['Heading2'])]
+        ], colWidths=[2*inch, 6*inch])
+        elements.append(header_table)
+    except Exception as e:
+        # Si falla el logo, usar versión simple de texto
+        header_style = styles['Heading1']
+        header_style.textColor = colors.HexColor('#CC0000')
+        header = Paragraph("PDVSA - Sistema de Gestión Documental", header_style)
+        elements.append(header)
+        # Opcional: imprimir mensaje de depuración
+        # print(f"Info: No se pudo cargar el logo ({str(e)}), usando texto alternativo")
+    
+    # Línea separadora
+    elements.append(Spacer(1, 0.1*inch))
+    elements.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor('#CC0000'), spaceBefore=5, spaceAfter=15))
+    
+    # Título del reporte (más grande y destacado)
+    titulo_style = styles['Heading1']
+    titulo_style.textColor = colors.HexColor('#003366')  # Azul oscuro corporativo
+    titulo_style.alignment = 1  # Centrado
+    titulo_style.fontSize = 18
+    titulo_style.leading = 24  # Espaciado entre líneas
+    titulo = Paragraph(
+        f"Reporte del Proyecto: {proyecto[5]} - {proyecto[1]} (Cliente: {proyecto[4]})", 
+        titulo_style
+    )
+    elements.append(titulo)
+    
+    # Tabla resumen de revisiones (alineada a la derecha)
+    rev_counts = {'Rev A': 0, 'Rev B': 0, 'Rev 0': 0}
+    for doc_data in datos_proyecto['documentos']:
+        revision = doc_data['documento'][7]  # Campo de revisión
+        if revision in rev_counts:
+            rev_counts[revision] += 1
+    
+    from reportlab.graphics.shapes import Drawing
+    from reportlab.graphics.charts.barcharts import VerticalBarChart
+    
+    # Importaciones necesarias para el layout
+    from reportlab.platypus import KeepTogether
+    
+    # Calcular altura dinámica basada en cantidad de datos
+    max_value = max(rev_counts.values())
+    chart_height = min(150 + (max_value * 5), 300)  # Altura entre 150-300px
+    
+    # Crear gráfico de barras adaptable
+    drawing = Drawing(250, chart_height)
+    bc = VerticalBarChart()
+    bc.x = 50
+    bc.y = 20
+    bc.height = chart_height - 40
+    bc.width = 150
+    bc.data = [[v for v in rev_counts.values()]]
+    bc.strokeColor = colors.black
+    bc.valueAxis.valueMin = 0
+    bc.valueAxis.valueMax = max_value * 1.2  # Margen superior
+    bc.barSpacing = 0.2
+    bc.barWidth = 0.3
+    bc.bars[0].fillColor = colors.HexColor('#1f77b4')  # Azul más profesional
+    bc.categoryAxis.categoryNames = list(rev_counts.keys())
+    bc.categoryAxis.labels.boxAnchor = 'ne'
+    bc.categoryAxis.labels.dx = 8
+    bc.categoryAxis.labels.dy = -2
+    bc.categoryAxis.labels.angle = 0
+    drawing.add(bc)
+
+    # Crear tabla resumen
+    resumen_data = [["Revisión", "Cantidad"]]
+    resumen_data.extend([[k, str(v)] for k, v in rev_counts.items()])
+    
+    # Crear tabla con estilo mejorado
+    resumen_table = Table(resumen_data, colWidths=[inch*1.5, inch*1])
+    resumen_style = TableStyle([
+        ('ALIGN', (0,0), (-1,-1), 'CENTER'),
+        ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0,0), (-1,-1), 10),
+        ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#f7f7f7')),
+        ('GRID', (0,0), (-1,-1), 0.5, colors.lightgrey),
+        ('TOPPADDING', (0,0), (-1,-1), 6),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 6),
+        ('LEFTPADDING', (0,0), (-1,-1), 8),
+        ('RIGHTPADDING', (0,0), (-1,-1), 8),
+        ('VALIGN', (0,0), (-1,-1), 'MIDDLE')
+    ])
+    resumen_table.setStyle(resumen_style)
+
+    # Crear layout flexible usando Table
+    container = Table([
+        [drawing, resumen_table]
+    ], colWidths=['40%', '60%'],
+    style=TableStyle([
+        ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ('ALIGN', (0,0), (-1,-1), 'CENTER'),
+        ('LEFTPADDING', (0,0), (0,0), 20),  # Espacio izquierdo para el gráfico
+        ('RIGHTPADDING', (1,0), (1,0), 10)  # Espacio derecho para la tabla
+    ]))
+    
+    # Agregar al documento con espaciado
+    elements.append(Spacer(1, 0.3*inch))
+    elements.append(container)
+    elements.append(Spacer(1, 0.4*inch))
+    
+    
+    
+
+    
+    # Encabezados de tabla
+    encabezados = [
+        "Disciplina", 
+        "Código", 
+        "Nombre",
+        "Revisión", 
+        "Status",
+        "Emisión",
+        "Recepción"
+    ]
+    
+    # Preparar datos para la tabla
+    data = [encabezados]
+    
+    for doc_data in datos_proyecto['documentos']:
+        documento = doc_data['documento']
+        
+        # Manejar documentos sin versiones
+        if not doc_data['versiones']:
+            # Mostrar documento con datos básicos y campos vacíos para versiones
+            data.append([
+                Paragraph(documento[5], styles['Normal']),  # Disciplina
+                Paragraph(f"{proyecto[5]}-{documento[2]}", styles['Normal']),  # Código sin transmittal
+                Paragraph(documento[3], styles['Normal']),  # Nombre
+                Paragraph(documento[7], styles['Normal']),  # Revisión
+                Paragraph("-", styles['Normal']),  # Status vacío
+                Paragraph("-", styles['Normal']),  # Emisión vacía
+                Paragraph("-", styles['Normal'])  # Recepción vacía
+            ])
+            continue
+
+        # Buscar versión que coincida con la revisión del documento
+        version_actual = None
+        for version in doc_data['versiones']:
+            if version['version'][2] == documento[7]:  # Comparar nombre versión con revisión doc
+                version_actual = version
+                break
+        
+        if not version_actual:
+            # Mostrar documento con revisión pero sin versión coincidente
+            data.append([
+                Paragraph(documento[5], styles['Normal']),  # Disciplina
+                Paragraph(f"{proyecto[5]}-{documento[2]}", styles['Normal']),  # Código sin transmittal
+                Paragraph(documento[3], styles['Normal']),  # Nombre
+                Paragraph(documento[7], styles['Normal']),  # Revisión
+                Paragraph("(No coincide)", styles['Normal']),  # Status
+                Paragraph("-", styles['Normal']),  # Emisión
+                Paragraph("-", styles['Normal'])  # Recepción
+            ])
+            continue
+            
+        # Buscar fechas de emisión y recepción
+        fecha_emision = fecha_recepcion = None
+        for fecha in version_actual['fechas']:
+            if fecha[2] == "Fecha de Emisión":
+                fecha_emision = fecha[3]
+            elif fecha[2] == "Fecha de Recepción":
+                fecha_recepcion = fecha[3]
+        
+        # Construir código compuesto: proyecto-documento-transmitall
+        codigo_compuesto = f"{proyecto[5]}-{documento[2]}-{version_actual['version'][5]}"
+        
+        # Agregar fila a la tabla
+        data.append([
+            Paragraph(documento[5], styles['Normal']),  # Disciplina
+            Paragraph(codigo_compuesto, styles['Normal']),  # Código compuesto
+            Paragraph(documento[3], styles['Normal']),  # Nombre
+            Paragraph(documento[7], styles['Normal']),  # Revisión
+            Paragraph(version_actual['version'][3], styles['Normal']),  # Status
+            Paragraph(fecha_emision or "-", styles['Normal']),  # Emisión
+            Paragraph(fecha_recepcion or "-", styles['Normal'])  # Recepción
+        ])
+    
+    # Ajustar ancho de columnas para mejor uso del espacio horizontal
+    col_widths = [inch*1.2, inch*2.0, inch*3.0, inch*1.0, inch*1.0, inch*1.0, inch*1.0]
+    
+    # Crear tabla con anchos personalizados
+    tabla = Table(data, colWidths=col_widths)
+    estilo_tabla = TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.lightgrey),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.black),
+        ('ALIGN', (0,0), (-1,-1), 'CENTER'),
+        ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),  # Centrado vertical
+        ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0,0), (-1,0), 10),
+        ('BOTTOMPADDING', (0,0), (-1,0), 12),
+        ('GRID', (0,0), (-1,-1), 1, colors.black),
+        ('LEADING', (0,0), (-1,-1), 14)  # Espaciado entre líneas
+    ])
+    tabla.setStyle(estilo_tabla)
+    elements.append(tabla)
+    
+    # Generar PDF
+    try:
+        doc.build(elements)
+        return nombre_archivo
+    except Exception as e:
+        print(f"Error al generar el PDF: {e}")
+        return None
+
 if __name__ == "__main__":
-    # Test the generar_clave function
-    pass
+    # Test PDF generation with sample project ID
+    result = generar_reporte_proyecto(1)
+    if result:
+        print(f"Reporte de proyecto generado como '{result}'")
+    else:
+        print("Error al generar el reporte")

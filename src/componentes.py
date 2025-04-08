@@ -584,9 +584,9 @@ class Documento(ft.Column):
         nombre_version_field = ft.Dropdown(
             label="Nombre de la versión",
             options=[
-                ft.dropdown.Option("Versión A"),
-                ft.dropdown.Option("Versión B"),
-                ft.dropdown.Option("Versión 0"),
+                ft.dropdown.Option("Rev A"),
+                ft.dropdown.Option("Rev B"),
+                ft.dropdown.Option("Rev 0"),
             ],
             border_color=COLOR_BORDE,
             focused_border_color=COLOR_PRIMARIO,
@@ -1994,9 +1994,9 @@ class VersionDetalle(ft.Container):
             label="Nombre de la versión",
             value=self.current_version_name,
             options=[
-                ft.dropdown.Option("Versión A"),
-                ft.dropdown.Option("Versión B"),
-                ft.dropdown.Option("Versión 0"),
+                ft.dropdown.Option("Rev A"),
+                ft.dropdown.Option("Rev B"),
+                ft.dropdown.Option("Rev 0"),
             ],
             border_color=COLOR_BORDE,
             focused_border_color=COLOR_PRIMARIO,
