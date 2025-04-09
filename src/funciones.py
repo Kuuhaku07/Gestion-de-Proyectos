@@ -27,7 +27,7 @@ def xor_encrypt_decrypt(text, key):
 
 def almacenar_pdf(pdf_path, key):
     # Define the target directory
-    target_directory = '../data/pdf'
+    target_directory = 'data/pdf'
     
     # Create the target directory if it doesn't exist
     if not os.path.exists(target_directory):
@@ -120,14 +120,13 @@ def generar_reporte_proyecto(proyecto_id, output_path=os.path.join(os.path.expan
         header_style.textColor = colors.HexColor('#CC0000')
         header = Paragraph("PDVSA - Sistema de Gestión Documental", header_style)
         elements.append(header)
-        # Opcional: imprimir mensaje de depuración
-        # print(f"Info: No se pudo cargar el logo ({str(e)}), usando texto alternativo")
+
     
     # Línea separadora
     elements.append(Spacer(1, 0.1*inch))
     elements.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor('#CC0000'), spaceBefore=5, spaceAfter=15))
     
-    # Título del reporte (más grande y destacado)
+    # Título del reporte 
     titulo_style = styles['Heading1']
     titulo_style.textColor = colors.HexColor('#003366')  # Azul oscuro corporativo
     titulo_style.alignment = 1  # Centrado
@@ -168,7 +167,7 @@ def generar_reporte_proyecto(proyecto_id, output_path=os.path.join(os.path.expan
     bc.valueAxis.valueMin = 0
     bc.valueAxis.valueMax = max_value * 1.2  # Margen superior
     bc.barSpacing = 0.2
-    bc.barWidth = 0.3
+    bc.barWidth = 3
     bc.bars[0].fillColor = colors.HexColor('#1f77b4')  # Azul más profesional
     bc.categoryAxis.categoryNames = list(rev_counts.keys())
     bc.categoryAxis.labels.boxAnchor = 'ne'
@@ -381,13 +380,14 @@ def generar_reporte_rev0(proyecto_id, output_path=os.path.join(os.path.expanduse
     elements.append(Spacer(1, 0.3*inch))
     
     # Tabla de documentos con ambas fechas
-    encabezados = ["Código", "Nombre", "Disciplina", "Emisión", "Recepción"]
+    encabezados = ["Código", "Transmittal", "Nombre", "Disciplina", "Emisión", "Recepción"]
     data = [encabezados]
     
     for doc_data in docs_rev0:
         documento = doc_data['documento']
         # Buscar ambas fechas (igual que en generar_reporte_proyecto)
         fecha_emision = fecha_recepcion = None
+        transmitall = "-"
         if doc_data['versiones']:
             for version in doc_data['versiones']:
                 for fecha in version['fechas']:
@@ -395,16 +395,18 @@ def generar_reporte_rev0(proyecto_id, output_path=os.path.join(os.path.expanduse
                         fecha_emision = fecha[3]
                     elif fecha[2] == "Fecha de Recepción":
                         fecha_recepcion = fecha[3]
+                transmitall = version['version'][5] or "-"
         
         data.append([
             Paragraph(f"{proyecto[5]}-{documento[2]}", styles['Normal']),
+            Paragraph(transmitall, styles['Normal']),
             Paragraph(documento[3], styles['Normal']),
             Paragraph(documento[5], styles['Normal']),
             Paragraph(fecha_emision or "-", styles['Normal']),
             Paragraph(fecha_recepcion or "-", styles['Normal'])
         ])
     
-    tabla = Table(data, colWidths=[1.5*inch, 3*inch, 1.5*inch, 1.2*inch, 1.2*inch])
+    tabla = Table(data, colWidths=[1.5*inch, 1.5*inch, 2.5*inch, 1.5*inch, 1.2*inch, 1.2*inch])
     estilo_tabla = TableStyle([
         ('BACKGROUND', (0,0), (-1,0), colors.lightgrey),
         ('TEXTCOLOR', (0,0), (-1,0), colors.black),
@@ -428,7 +430,7 @@ def generar_reporte_rev0(proyecto_id, output_path=os.path.join(os.path.expanduse
 
 if __name__ == "__main__":
     # Test PDF generation with sample project ID
-    result = generar_reporte_rev0(1)
+    result = generar_reporte_proyecto(1)
     if result:
         print(f"Reporte de proyecto generado como '{result}'")
     else:

@@ -93,11 +93,34 @@ class Proyecto(ft.Column):
         )
         
         dlg = ReusableModal(
-            title="Tipo de Reporte",
-            content="Seleccione el tipo de reporte a descargar:",
+            title="",  
+            content="",  
             actions=[
-                ft.Row([full_report_btn, rev0_report_btn], spacing=ESPACIADO_NORMAL),
-                cancel_btn
+                ft.Container(
+                    content=ft.Column([
+                        ft.Text("Tipo de Reporte", 
+                               size=TEXTO_GRANDE, 
+                               weight=ft.FontWeight.BOLD, 
+                               color=COLOR_TEXTO,
+                               text_align=ft.TextAlign.CENTER),
+                        ft.Text("Seleccione el tipo de reporte a descargar:", 
+                               size=TEXTO_NORMAL, 
+                               color=COLOR_TEXTO,
+                               text_align=ft.TextAlign.CENTER),
+                        ft.Container(height=ESPACIADO_GRANDE),  # Espacio entre texto y botones
+                        ft.Row(
+                            controls=[full_report_btn, rev0_report_btn],
+                            spacing=ESPACIADO_NORMAL,
+                            alignment=ft.MainAxisAlignment.CENTER
+                        ),
+                        ft.Container(
+                            content=cancel_btn,
+                            alignment=ft.alignment.center,
+                            padding=ft.padding.only(top=ESPACIADO_NORMAL)
+                        ),
+                        ft.Container(height=ESPACIADO_GRANDE)
+                    ], horizontal_alignment=ft.CrossAxisAlignment.CENTER)
+                )
             ],
             modal=True
         )
