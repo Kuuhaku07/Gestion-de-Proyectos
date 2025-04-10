@@ -23,8 +23,8 @@ Sistema de gestión documental para proyectos que permite:
 ## Instalación
 1. Clonar el repositorio:
 ```bash
-git clone [URL_DEL_REPOSITORIO]
-cd [NOMBRE_REPOSITORIO]
+git clone https://github.com/Kuuhaku07/Gestion-de-Proyectos.git
+cd Gestion-de-Proyectos
 ```
 
 2. Crear entorno virtual (recomendado):
