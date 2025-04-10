@@ -74,13 +74,25 @@ def descargar_pdf(encrypted_pdf_path, key, output_path=None):
         file.write(decrypted_data.encode('latin-1'))  # Encode back to bytes for saving
     
     return output_path
-def generar_reporte_proyecto(proyecto_id, output_path=os.path.join(os.path.expanduser("~"), "Downloads")):
+def generar_reporte_proyecto(proyecto_id, output_path=None):
     """Genera un PDF con información de documentos de un proyecto"""
+    # Set default output path to Downloads if not provided
+    if output_path is None:
+        output_path = os.path.join(os.path.expanduser("~"), "Downloads")
+    else:
+        # If output_path is provided, ensure it's a directory and add filename
+        if os.path.isdir(output_path):
+            pass  # Use as-is
+        else:
+            # If it's a file path, extract directory and create it
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+            return output_path  # Return the full file path
+    
     # Crear documento en orientación horizontal (landscape)
     from reportlab.lib.pagesizes import landscape
     from database import obtener_proyecto_completo
-    # Obtener datos del proyecto
     
+    # Obtener datos del proyecto
     datos_proyecto = obtener_proyecto_completo(proyecto_id)
     if not datos_proyecto:
         print(f"Error: No se encontró el proyecto con ID {proyecto_id}")
@@ -322,12 +334,24 @@ def generar_reporte_proyecto(proyecto_id, output_path=os.path.join(os.path.expan
 
 
 
-def generar_reporte_rev0(proyecto_id, output_path=os.path.join(os.path.expanduser("~"), "Downloads")):
+def generar_reporte_rev0(proyecto_id, output_path=None):
     """Genera un PDF con documentos en Rev 0 y porcentaje de completitud"""
+    # Set default output path to Downloads if not provided
+    if output_path is None:
+        output_path = os.path.join(os.path.expanduser("~"), "Downloads")
+    else:
+        # If output_path is provided, ensure it's a directory and add filename
+        if os.path.isdir(output_path):
+            pass  # Use as-is
+        else:
+            # If it's a file path, extract directory and create it
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+            return output_path  # Return the full file path
+    
     from reportlab.lib.pagesizes import landscape
     from database import obtener_proyecto_completo
     
-    # Obtener datos del proyecto (igual que en la otra función)
+    # Obtener datos del proyecto
     datos_proyecto = obtener_proyecto_completo(proyecto_id)
     if not datos_proyecto:
         print(f"Error: No se encontró el proyecto con ID {proyecto_id}")

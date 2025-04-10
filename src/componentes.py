@@ -133,8 +133,11 @@ class Proyecto(ft.Column):
                 self.page.close(control)
                 break
         
+        # Obtener ruta de descarga configurada
+        download_path = self.page.client_storage.get("download_path")
+        
         # Generar y descargar reporte completo
-        result = generar_reporte_proyecto(self.id)
+        result = generar_reporte_proyecto(self.id, download_path)
         if result:
             dlg = ReusableModal(
                 title="Descarga Exitosa",
@@ -158,8 +161,11 @@ class Proyecto(ft.Column):
                 self.page.close(control)
                 break
         
+        # Obtener ruta de descarga configurada
+        download_path = self.page.client_storage.get("download_path")
+        
         # Generar y descargar reporte Rev 0
-        result = generar_reporte_rev0(self.id)
+        result = generar_reporte_rev0(self.id, download_path)
         if result:
             dlg = ReusableModal(
                 title="Descarga Exitosa",
