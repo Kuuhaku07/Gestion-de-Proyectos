@@ -228,15 +228,19 @@ def generar_reporte_proyecto(proyecto_id, output_path=None):
     
 
     
-    # Encabezados de tabla
+    # Encabezados de tabla (orden especificado por el usuario)
     encabezados = [
-        "Disciplina", 
-        "Código", 
+        "SubProyecto",
+        "Fase",
+        "Disciplina",
+        "Código PDVSA",
         "Nombre",
-        "Revisión", 
-        "Status",
+        "Recepción",
+        "Transmitall PDVSA",
         "Emisión",
-        "Recepción"
+        "Transmitall Cliente",
+        "Status",
+        "Revisión"
     ]
     
     # Preparar datos para la tabla
@@ -287,35 +291,84 @@ def generar_reporte_proyecto(proyecto_id, output_path=None):
             elif fecha[2] == "Fecha de Recepción":
                 fecha_recepcion = fecha[3]
         
-        # Construir código compuesto: proyecto-documento-transmitall
-        codigo_compuesto = f"{proyecto[5]}-{documento[2]}-{version_actual['version'][5]}"
+        # Construir código compuesto: proyecto-documento
+        codigo_compuesto = f"{proyecto[5]}-{documento[2]}"
         
-        # Agregar fila a la tabla
+        # Agregar fila a la tabla (orden especificado por el usuario)
         data.append([
+            Paragraph(documento[9] or "-", styles['Normal']),  # SubProyecto
+            Paragraph(documento[10] or "-", styles['Normal']),  # Fase
             Paragraph(documento[5], styles['Normal']),  # Disciplina
-            Paragraph(codigo_compuesto, styles['Normal']),  # Código compuesto
+            Paragraph(codigo_compuesto, styles['Normal']),  # Código PDVSA
             Paragraph(documento[3], styles['Normal']),  # Nombre
-            Paragraph(documento[7], styles['Normal']),  # Revisión
-            Paragraph(version_actual['version'][3], styles['Normal']),  # Status
+            Paragraph(fecha_recepcion or "-", styles['Normal']),  # Recepción
+            Paragraph(version_actual['version'][5] or "-", styles['Normal']),  # Transmitall PDVSA
             Paragraph(fecha_emision or "-", styles['Normal']),  # Emisión
-            Paragraph(fecha_recepcion or "-", styles['Normal'])  # Recepción
+            Paragraph(version_actual['version'][6] or "-", styles['Normal']),  # Transmitall Cliente
+            Paragraph(version_actual['version'][3], styles['Normal']),  # Status
+            Paragraph(documento[7], styles['Normal'])  # Revisión
         ])
     
-    # Ajustar ancho de columnas para mejor uso del espacio horizontal
-    col_widths = [inch*1.2, inch*2.0, inch*3.0, inch*1.0, inch*1.0, inch*1.0, inch*1.0]
+    # Ajustar anchos de columna para mejor legibilidad
+    col_widths = [
+        inch*0.6,  # SubProyecto
+        inch*0.7,  # Fase
+        inch*0.8,  # Disciplina
+        inch*1.2,  # Código PDVSA (aumentado)
+        inch*1.8,  # Nombre (reducido)
+        inch*0.9,  # Recepción
+        inch*0.6,  # T.PDV (aumentado)
+        inch*0.9,  # Emisión
+        inch*0.6,  # T.Clt (aumentado)
+        inch*0.8,  # Status
+        inch*0.5   # Revisión (reducido)
+    ]
     
-    # Crear tabla con anchos personalizados
+    # Encabezados con texto completo para código
+    data[0] = [
+        "SubP",      # SubProyecto
+        "Fase",      # Fase  
+        "Disc",      # Disciplina
+        "Código",    # Código completo
+        "Nombre",    # Nombre
+        "Rec",       # Recepción
+        "TP",        # T.PDV
+        "Emi",       # Emisión
+        "TC",        # T.Clt
+        "Stat",      # Status
+        "Rev"        # Revisión
+    ]
+    
+    # Agregar leyenda explicativa antes de la tabla
+    leyenda_style = styles['Normal']
+    leyenda_style.fontSize = 7
+    leyenda_style.leading = 9
+    leyenda = Paragraph(
+        "<b>Leyenda:</b> SubP=SubProyecto | Disc=Disciplina | "
+        "TP=Transmitall PDVSA | TC=Transmitall Cliente | "
+        "Stat=Status | Rev=Revisión",
+        leyenda_style
+    )
+    elements.append(Spacer(1, 0.1*inch))
+    elements.append(leyenda)
+    elements.append(Spacer(1, 0.1*inch))
+    
+    # Crear tabla con ajustes de legibilidad
     tabla = Table(data, colWidths=col_widths)
     estilo_tabla = TableStyle([
         ('BACKGROUND', (0,0), (-1,0), colors.lightgrey),
         ('TEXTCOLOR', (0,0), (-1,0), colors.black),
         ('ALIGN', (0,0), (-1,-1), 'CENTER'),
-        ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),  # Centrado vertical
+        ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
-        ('FONTSIZE', (0,0), (-1,0), 10),
-        ('BOTTOMPADDING', (0,0), (-1,0), 12),
+        ('FONTSIZE', (0,0), (-1,0), 8.5),  # Encabezados en 8.5pt
+        ('FONTSIZE', (0,1), (-1,-1), 7.5), # Datos en 7.5pt
+        ('BOTTOMPADDING', (0,0), (-1,0), 2),  # Reducido para fechas
+        ('TOPPADDING', (0,0), (-1,-1), 2),    # Reducido para fechas
+        ('LEFTPADDING', (0,0), (-1,-1), 4),   # Reducido para fechas
+        ('RIGHTPADDING', (0,0), (-1,-1), 4),  # Reducido para fechas
         ('GRID', (0,0), (-1,-1), 1, colors.black),
-        ('LEADING', (0,0), (-1,-1), 14)  # Espaciado entre líneas
+        ('LEADING', (0,0), (-1,-1), 8)       # Espaciado más reducido (8pt)
     ])
     tabla.setStyle(estilo_tabla)
     elements.append(tabla)
@@ -403,15 +456,25 @@ def generar_reporte_rev0(proyecto_id, output_path=None):
     elements.append(Paragraph(f"Porcentaje completado: {porcentaje:.1f}%", porcentaje_style))
     elements.append(Spacer(1, 0.3*inch))
     
-    # Tabla de documentos con ambas fechas
-    encabezados = ["Código", "Transmittal", "Nombre", "Disciplina", "Emisión", "Recepción"]
+    # Tabla de documentos con orden especificado
+    encabezados = [
+        "SubProyecto",
+        "Fase", 
+        "Disciplina",
+        "Código PDVSA",
+        "Nombre",
+        "Transmitall PDVSA",
+        "Emisión",
+        "Recepción",
+        "Transmitall Cliente"
+    ]
     data = [encabezados]
     
     for doc_data in docs_rev0:
         documento = doc_data['documento']
-        # Buscar ambas fechas (igual que en generar_reporte_proyecto)
+        # Buscar ambas fechas y transmitalls
         fecha_emision = fecha_recepcion = None
-        transmitall = "-"
+        transmitall_pdvsa = transmitall_cliente = "-"
         if doc_data['versiones']:
             for version in doc_data['versiones']:
                 for fecha in version['fechas']:
@@ -419,26 +482,72 @@ def generar_reporte_rev0(proyecto_id, output_path=None):
                         fecha_emision = fecha[3]
                     elif fecha[2] == "Fecha de Recepción":
                         fecha_recepcion = fecha[3]
-                transmitall = version['version'][5] or "-"
+                transmitall_pdvsa = version['version'][5] or "-"
+                transmitall_cliente = version['version'][6] or "-"
         
         data.append([
-            Paragraph(f"{proyecto[5]}-{documento[2]}", styles['Normal']),
-            Paragraph(transmitall, styles['Normal']),
-            Paragraph(documento[3], styles['Normal']),
-            Paragraph(documento[5], styles['Normal']),
-            Paragraph(fecha_emision or "-", styles['Normal']),
-            Paragraph(fecha_recepcion or "-", styles['Normal'])
+            Paragraph(documento[9] or "-", styles['Normal']),  # SubProyecto
+            Paragraph(documento[10] or "-", styles['Normal']),  # Fase
+            Paragraph(documento[5], styles['Normal']),  # Disciplina
+            Paragraph(f"{proyecto[5]}-{documento[2]}", styles['Normal']),  # Código PDVSA
+            Paragraph(documento[3], styles['Normal']),  # Nombre
+            Paragraph(transmitall_pdvsa, styles['Normal']),  # Transmitall PDVSA
+            Paragraph(fecha_emision or "-", styles['Normal']),  # Emisión
+            Paragraph(fecha_recepcion or "-", styles['Normal']),  # Recepción
+            Paragraph(transmitall_cliente, styles['Normal'])  # Transmitall Cliente
         ])
     
-    tabla = Table(data, colWidths=[1.5*inch, 1.5*inch, 2.5*inch, 1.5*inch, 1.2*inch, 1.2*inch])
+    # Ajustar anchos redistribuyendo espacio de columnas eliminadas (Revisión y Status)
+    col_widths = [
+        inch*0.7,  # SubProyecto
+        inch*0.8,  # Fase  
+        inch*0.9,  # Disciplina
+        inch*1.3,  # Código PDVSA (aumentado)
+        inch*2.0,  # Nombre (aumentado)
+        inch*0.6,  # T.PDV
+        inch*1.0,  # Emisión (aumentado)
+        inch*1.0,  # Recepción (aumentado)
+        inch*0.6   # T.Clt
+    ]
+    
+    # Encabezados consistentes con el otro reporte
+    data[0] = [
+        "SubP",      # SubProyecto
+        "Fase",      # Fase  
+        "Disc",      # Disciplina
+        "Código",    # Código completo
+        "Nombre",    # Nombre
+        "TP",        # T.PDV
+        "Emi",       # Emisión
+        "Rec",       # Recepción
+        "TC"         # T.Clt
+    ]
+    
+    # Agregar leyenda explicativa antes de la tabla
+    leyenda_style = styles['Normal']
+    leyenda_style.fontSize = 7
+    leyenda_style.leading = 9
+    leyenda = Paragraph(
+        "<b>Leyenda:</b> SubP=SubProyecto | Disc=Disciplina | "
+        "TP=Transmitall PDVSA | TC=Transmitall Cliente",
+        leyenda_style
+    )
+    elements.append(Spacer(1, 0.1*inch))
+    elements.append(leyenda)
+    elements.append(Spacer(1, 0.1*inch))
+    
+    # Crear tabla con los datos y anchos definidos
+    tabla = Table(data, colWidths=col_widths)
+    
     estilo_tabla = TableStyle([
         ('BACKGROUND', (0,0), (-1,0), colors.lightgrey),
         ('TEXTCOLOR', (0,0), (-1,0), colors.black),
         ('ALIGN', (0,0), (-1,-1), 'CENTER'),
         ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
-        ('FONTSIZE', (0,0), (-1,0), 10),
-        ('BOTTOMPADDING', (0,0), (-1,0), 12),
-        ('GRID', (0,0), (-1,-1), 1, colors.black)
+        ('FONTSIZE', (0,0), (-1,0), 8),  # Tamaño de fuente más pequeño
+        ('BOTTOMPADDING', (0,0), (-1,0), 8),
+        ('GRID', (0,0), (-1,-1), 1, colors.black),
+        ('LEADING', (0,0), (-1,-1), 10)  # Espaciado entre líneas reducido
     ])
     tabla.setStyle(estilo_tabla)
     elements.append(tabla)
@@ -454,7 +563,7 @@ def generar_reporte_rev0(proyecto_id, output_path=None):
 
 if __name__ == "__main__":
     # Test PDF generation with sample project ID
-    result = generar_reporte_proyecto(1)
+    result = generar_reporte_rev0(1)
     if result:
         print(f"Reporte de proyecto generado como '{result}'")
     else:
