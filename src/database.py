@@ -71,7 +71,9 @@ def inicializar_tablas():
         "disciplina TEXT": "",
         "status TEXT": "",
         "revision TEXT": "",
-        "observaciones TEXT": ""
+        "observaciones TEXT": "",
+        "subproyecto TEXT DEFAULT \"\"": "",
+        "Fase TEXT DEFAULT \"\"": ""
     })
     crear_tabla("Versiones", {
         "id INTEGER PRIMARY KEY": "",
@@ -79,7 +81,8 @@ def inicializar_tablas():
         "nombre_version TEXT": "",
         "status TEXT": "", 
         "archivo TEXT": "",
-        "transmitall TEXT": ""
+        "transmitall TEXT": "",
+        "transmitall_cliente TEXT DEFAULT \"\"": ""
     })
     crear_tabla("Fechas", {
         "id INTEGER PRIMARY KEY": "",
@@ -302,12 +305,12 @@ def eliminar_proyecto(proyecto_id):
 
 # Region Documentos
 
-def crear_documento(codigo, nombre, tipo, disciplina, status, observaciones, proyecto_id, revision):
+def crear_documento(codigo, nombre, tipo, disciplina, status, observaciones, proyecto_id, revision, subproyecto="", Fase=""):
     conn = conectar_db()
     cursor = conn.cursor()
     
-    cursor.execute("INSERT INTO Documentos (codigo, nombre, tipo, disciplina, status, observaciones, proyecto_id, revision) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", 
-                   (codigo, nombre, tipo, disciplina, status, observaciones, proyecto_id, revision))
+    cursor.execute("INSERT INTO Documentos (codigo, nombre, tipo, disciplina, status, observaciones, proyecto_id, revision, subproyecto, Fase) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", 
+                   (codigo, nombre, tipo, disciplina, status, observaciones, proyecto_id, revision, subproyecto, Fase))
     
     conn.commit()
     conn.close()
@@ -316,7 +319,7 @@ def obtener_documentos(proyecto_id=None, status=None):
     conn = conectar_db()
     cursor = conn.cursor()
     
-    query = "SELECT * FROM Documentos WHERE 1=1"
+    query = "SELECT id, proyecto_id, codigo, nombre, tipo, disciplina, status, revision, observaciones, subproyecto, Fase FROM Documentos WHERE 1=1"
     params = []
 
     if proyecto_id:
@@ -354,12 +357,22 @@ def eliminar_documento(documento_id):
     conn.commit()
     conn.close()
 
-def modificar_documento(id, codigo, nombre, tipo, disciplina, status, observaciones, revision):
+def modificar_documento(id, codigo, nombre, tipo, disciplina, status, observaciones, revision, subproyecto=None, Fase=None):
     conn = conectar_db()
     cursor = conn.cursor()
     
-    cursor.execute("UPDATE Documentos SET codigo = ?, nombre = ?, tipo = ?, disciplina = ?, status = ?, observaciones = ?, revision = ? WHERE id = ?", 
-                   (codigo, nombre, tipo, disciplina, status, observaciones, revision, id))
+    if subproyecto is not None and Fase is not None:
+        cursor.execute("UPDATE Documentos SET codigo = ?, nombre = ?, tipo = ?, disciplina = ?, status = ?, observaciones = ?, revision = ?, subproyecto = ?, Fase = ? WHERE id = ?", 
+                       (codigo, nombre, tipo, disciplina, status, observaciones, revision, subproyecto, Fase, id))
+    elif subproyecto is not None:
+        cursor.execute("UPDATE Documentos SET codigo = ?, nombre = ?, tipo = ?, disciplina = ?, status = ?, observaciones = ?, revision = ?, subproyecto = ? WHERE id = ?", 
+                       (codigo, nombre, tipo, disciplina, status, observaciones, revision, subproyecto, id))
+    elif Fase is not None:
+        cursor.execute("UPDATE Documentos SET codigo = ?, nombre = ?, tipo = ?, disciplina = ?, status = ?, observaciones = ?, revision = ?, Fase = ? WHERE id = ?", 
+                       (codigo, nombre, tipo, disciplina, status, observaciones, revision, Fase, id))
+    else:
+        cursor.execute("UPDATE Documentos SET codigo = ?, nombre = ?, tipo = ?, disciplina = ?, status = ?, observaciones = ?, revision = ? WHERE id = ?", 
+                       (codigo, nombre, tipo, disciplina, status, observaciones, revision, id))
     
     conn.commit()
     conn.close()
@@ -369,13 +382,13 @@ def modificar_documento(id, codigo, nombre, tipo, disciplina, status, observacio
 
 # Region Versiones
 
-def crear_version(documento_id, nombre_version, status, archivo, transmitall=""):
+def crear_version(documento_id, nombre_version, status, archivo, transmitall="", transmitall_cliente=""):
     conn = conectar_db()
     cursor = conn.cursor()
     
     # Crear la versión
-    cursor.execute("INSERT INTO Versiones (documento_id, nombre_version, status, archivo, transmitall) VALUES (?, ?, ?, ?, ?)", 
-                   (documento_id, nombre_version, status, archivo, transmitall))
+    cursor.execute("INSERT INTO Versiones (documento_id, nombre_version, status, archivo, transmitall, transmitall_cliente) VALUES (?, ?, ?, ?, ?, ?)", 
+                   (documento_id, nombre_version, status, archivo, transmitall, transmitall_cliente))
     version_id = cursor.lastrowid
     
     # Crear fechas predeterminadas
@@ -391,7 +404,7 @@ def obtener_versiones(documento_id=None, status=None):
     conn = conectar_db()
     cursor = conn.cursor()
     
-    query = "SELECT * FROM Versiones WHERE 1=1"
+    query = "SELECT id, documento_id, nombre_version, status, archivo, transmitall, transmitall_cliente FROM Versiones WHERE 1=1"
     params = []
 
     if documento_id:
@@ -408,13 +421,19 @@ def obtener_versiones(documento_id=None, status=None):
     conn.close()
     return versiones
 
-def modificar_version(version_id, documento_id, nombre_version, status, archivo, transmitall=None):
+def modificar_version(version_id, documento_id, nombre_version, status, archivo, transmitall=None, transmitall_cliente=None):
     conn = conectar_db()
     cursor = conn.cursor()
     
-    if transmitall is not None:
+    if transmitall is not None and transmitall_cliente is not None:
+        cursor.execute("UPDATE Versiones SET documento_id = ?, nombre_version = ?, status = ?, archivo = ?, transmitall = ?, transmitall_cliente = ? WHERE id = ?", 
+                       (documento_id, nombre_version, status, archivo, transmitall, transmitall_cliente, version_id))
+    elif transmitall is not None:
         cursor.execute("UPDATE Versiones SET documento_id = ?, nombre_version = ?, status = ?, archivo = ?, transmitall = ? WHERE id = ?", 
                        (documento_id, nombre_version, status, archivo, transmitall, version_id))
+    elif transmitall_cliente is not None:
+        cursor.execute("UPDATE Versiones SET documento_id = ?, nombre_version = ?, status = ?, archivo = ?, transmitall_cliente = ? WHERE id = ?", 
+                       (documento_id, nombre_version, status, archivo, transmitall_cliente, version_id))
     else:
         cursor.execute("UPDATE Versiones SET documento_id = ?, nombre_version = ?, status = ?, archivo = ? WHERE id = ?", 
                        (documento_id, nombre_version, status, archivo, version_id))
