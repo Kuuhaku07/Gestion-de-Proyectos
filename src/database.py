@@ -396,6 +396,10 @@ def crear_version(documento_id, nombre_version, status, archivo, transmitall="",
                    (version_id, "Fecha de Emisión"))
     cursor.execute("INSERT INTO Fechas (version_id, nombre_fecha) VALUES (?, ?)", 
                    (version_id, "Fecha de Recepción"))
+    cursor.execute("INSERT INTO Fechas (version_id, nombre_fecha) VALUES (?, ?)", 
+                   (version_id, "Fecha Emisión Cliente"))
+    cursor.execute("INSERT INTO Fechas (version_id, nombre_fecha) VALUES (?, ?)", 
+                   (version_id, "Fecha Recepción Cliente"))
     
     conn.commit()
     conn.close()

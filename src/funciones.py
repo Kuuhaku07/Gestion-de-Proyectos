@@ -230,8 +230,6 @@ def generar_reporte_proyecto(proyecto_id, output_path=None):
     
     # Encabezados de tabla (orden especificado por el usuario)
     encabezados = [
-        "SubProyecto",
-        "Fase",
         "Disciplina",
         "Código PDVSA",
         "Nombre",
@@ -240,7 +238,9 @@ def generar_reporte_proyecto(proyecto_id, output_path=None):
         "Emisión",
         "Transmitall Cliente",
         "Status",
-        "Revisión"
+        "Revisión",
+        "Fecha Emisión Cliente",
+        "Fecha Recepción Cliente"
     ]
     
     # Preparar datos para la tabla
@@ -283,60 +283,78 @@ def generar_reporte_proyecto(proyecto_id, output_path=None):
             ])
             continue
             
-        # Buscar fechas de emisión y recepción
-        fecha_emision = fecha_recepcion = None
+        # Buscar todas las fechas relevantes
+        fecha_emision = fecha_recepcion = fecha_emision_cliente = fecha_recepcion_cliente = None
         for fecha in version_actual['fechas']:
             if fecha[2] == "Fecha de Emisión":
                 fecha_emision = fecha[3]
             elif fecha[2] == "Fecha de Recepción":
                 fecha_recepcion = fecha[3]
+            elif fecha[2] == "Fecha Emisión Cliente":
+                fecha_emision_cliente = fecha[3]
+            elif fecha[2] == "Fecha Recepción Cliente":
+                fecha_recepcion_cliente = fecha[3]
         
         # Construir código compuesto: proyecto-documento
         codigo_compuesto = f"{proyecto[5]}-{documento[2]}"
         
-        # Agregar fila a la tabla (orden especificado por el usuario)
+        # Agregar fila a la tabla con los nuevos campos
         data.append([
-            Paragraph(documento[9] or "-", styles['Normal']),  # SubProyecto
-            Paragraph(documento[10] or "-", styles['Normal']),  # Fase
-            Paragraph(documento[5], styles['Normal']),  # Disciplina
             Paragraph(codigo_compuesto, styles['Normal']),  # Código PDVSA
             Paragraph(documento[3], styles['Normal']),  # Nombre
-            Paragraph(fecha_recepcion or "-", styles['Normal']),  # Recepción
+            Paragraph(documento[5], styles['Normal']),  # Disciplina
+
             Paragraph(version_actual['version'][5] or "-", styles['Normal']),  # Transmitall PDVSA
             Paragraph(fecha_emision or "-", styles['Normal']),  # Emisión
+            Paragraph(fecha_recepcion or "-", styles['Normal']),  # Recepción
+
             Paragraph(version_actual['version'][6] or "-", styles['Normal']),  # Transmitall Cliente
+            Paragraph(fecha_recepcion_cliente or "-", styles['Normal']),  # Fecha Recepción Cliente
+            Paragraph(fecha_emision_cliente or "-", styles['Normal']),  # Fecha Emisión Cliente
+
+
             Paragraph(version_actual['version'][3], styles['Normal']),  # Status
-            Paragraph(documento[7], styles['Normal'])  # Revisión
+            Paragraph(documento[7], styles['Normal']),  # Revisión
+
         ])
     
-    # Ajustar anchos de columna para mejor legibilidad
+    # Ajustar anchos de columna para incluir nuevos campos
     col_widths = [
-        inch*0.6,  # SubProyecto
-        inch*0.7,  # Fase
+        inch*1.2,  # Código PDVSA
+        inch*1.8,  # Nombre
         inch*0.8,  # Disciplina
-        inch*1.2,  # Código PDVSA (aumentado)
-        inch*1.8,  # Nombre (reducido)
-        inch*0.9,  # Recepción
-        inch*0.6,  # T.PDV (aumentado)
+
+        inch*0.6,  # T.PDV
         inch*0.9,  # Emisión
-        inch*0.6,  # T.Clt (aumentado)
+        inch*0.9,  # Recepción
+
+        inch*0.6,  # T.Clt
+        inch*0.9,  # Fecha Emisión Cliente
+        inch*0.9,   # Fecha Recepción Cliente
+
         inch*0.8,  # Status
-        inch*0.5   # Revisión (reducido)
+        inch*0.5,  # Revisión
+        
     ]
     
-    # Encabezados con texto completo para código
+    # Encabezados actualizados
     data[0] = [
-        "SubP",      # SubProyecto
-        "Fase",      # Fase  
-        "Disc",      # Disciplina
         "Código",    # Código completo
         "Nombre",    # Nombre
-        "Rec",       # Recepción
+        "Disciplina",      # Disciplina
+
         "TP",        # T.PDV
-        "Emi",       # Emisión
+        "Emisión",       # Emisión
+        "Devolución",       # Recepción
+
         "TC",        # T.Clt
-        "Stat",      # Status
-        "Rev"        # Revisión
+        "RecepciónC",        # Fecha Recepción Cliente
+        "DevoluciónC",       # Fecha Devolucion Cliente
+
+
+        "Status",      # Status
+        "Rev",       # Revisión
+
     ]
     
     # Agregar leyenda explicativa antes de la tabla
@@ -344,9 +362,8 @@ def generar_reporte_proyecto(proyecto_id, output_path=None):
     leyenda_style.fontSize = 7
     leyenda_style.leading = 9
     leyenda = Paragraph(
-        "<b>Leyenda:</b> SubP=SubProyecto | Disc=Disciplina | "
-        "TP=Transmitall PDVSA | TC=Transmitall Cliente | "
-        "Stat=Status | Rev=Revisión",
+        "<b>Leyenda:</b> Disc=Disciplina | TP=Transmitall PDVSA | TC=Transmitall Cliente | "
+        "Rev=Revisión |   FRC=Fecha Recepción Cliente | FDC=Fecha Devolucion Cliente",
         leyenda_style
     )
     elements.append(Spacer(1, 0.1*inch))
@@ -458,15 +475,16 @@ def generar_reporte_rev0(proyecto_id, output_path=None):
     
     # Tabla de documentos con orden especificado
     encabezados = [
-        "SubProyecto",
-        "Fase", 
+
         "Disciplina",
         "Código PDVSA",
         "Nombre",
         "Transmitall PDVSA",
         "Emisión",
         "Recepción",
-        "Transmitall Cliente"
+        "Transmitall Cliente",
+        "Emision Cliente",
+        "Recepción Cliente"
     ]
     data = [encabezados]
     
@@ -482,45 +500,61 @@ def generar_reporte_rev0(proyecto_id, output_path=None):
                         fecha_emision = fecha[3]
                     elif fecha[2] == "Fecha de Recepción":
                         fecha_recepcion = fecha[3]
+                    elif fecha[2] == "Fecha Emisión Cliente":
+                        fecha_emision_cliente = fecha[3]
+                    elif fecha[2] == "Fecha Recepción Cliente":
+                        fecha_recepcion_cliente = fecha[3]
                 transmitall_pdvsa = version['version'][5] or "-"
                 transmitall_cliente = version['version'][6] or "-"
         
         data.append([
-            Paragraph(documento[9] or "-", styles['Normal']),  # SubProyecto
-            Paragraph(documento[10] or "-", styles['Normal']),  # Fase
-            Paragraph(documento[5], styles['Normal']),  # Disciplina
+
             Paragraph(f"{proyecto[5]}-{documento[2]}", styles['Normal']),  # Código PDVSA
             Paragraph(documento[3], styles['Normal']),  # Nombre
+            Paragraph(documento[5], styles['Normal']),  # Disciplina    
+
             Paragraph(transmitall_pdvsa, styles['Normal']),  # Transmitall PDVSA
             Paragraph(fecha_emision or "-", styles['Normal']),  # Emisión
             Paragraph(fecha_recepcion or "-", styles['Normal']),  # Recepción
-            Paragraph(transmitall_cliente, styles['Normal'])  # Transmitall Cliente
+
+            Paragraph(transmitall_cliente, styles['Normal']),  # Transmitall Cliente
+            Paragraph(fecha_recepcion_cliente or "-", styles['Normal']),  # Recepción
+            Paragraph(fecha_emision_cliente or "-", styles['Normal']),  # Emisión
+
         ])
     
     # Ajustar anchos redistribuyendo espacio de columnas eliminadas (Revisión y Status)
     col_widths = [
-        inch*0.7,  # SubProyecto
-        inch*0.8,  # Fase  
+
+
+        inch*1.3,  # Código PDVSA 
+        inch*2.0,  # Nombre 
         inch*0.9,  # Disciplina
-        inch*1.3,  # Código PDVSA (aumentado)
-        inch*2.0,  # Nombre (aumentado)
+
         inch*0.6,  # T.PDV
-        inch*1.0,  # Emisión (aumentado)
-        inch*1.0,  # Recepción (aumentado)
-        inch*0.6   # T.Clt
+        inch*1.0,  # Emisión 
+        inch*1.0,  # Devolución 
+
+        inch*0.6,  # T.Clt
+        inch*1.0,  # Emisión 
+        inch*1.0,  # Recepción 
     ]
     
-    # Encabezados consistentes con el otro reporte
+
     data[0] = [
-        "SubP",      # SubProyecto
-        "Fase",      # Fase  
-        "Disc",      # Disciplina
+
         "Código",    # Código completo
-        "Nombre",    # Nombre
-        "TP",        # T.PDV
-        "Emi",       # Emisión
-        "Rec",       # Recepción
-        "TC"         # T.Clt
+        "Nombre",
+        "Disciplina",   
+
+        "TP",        # Transmitall PDVSA
+        "Emisión",      
+        "Devolución",      
+
+        "TC",         # Transmitall Cliente
+        "RecepciónC",   
+        "DevoluciónC",  
+
     ]
     
     # Agregar leyenda explicativa antes de la tabla
@@ -528,7 +562,7 @@ def generar_reporte_rev0(proyecto_id, output_path=None):
     leyenda_style.fontSize = 7
     leyenda_style.leading = 9
     leyenda = Paragraph(
-        "<b>Leyenda:</b> SubP=SubProyecto | Disc=Disciplina | "
+        "<b>Leyenda:</b>  "
         "TP=Transmitall PDVSA | TC=Transmitall Cliente",
         leyenda_style
     )

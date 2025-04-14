@@ -1692,7 +1692,7 @@ class VersionDetalle(ft.Container):
         super().__init__()
         self.scroll = ft.ScrollMode.AUTO
         self.width = 400
-        self.height = 300
+        self.height = 400
         self.border = ft.border.all(1, COLOR_BORDE)
         self.border_radius = ft.border_radius.all(BORDE_RADIO_GRANDE)
         self.padding = ESPACIADO_NORMAL
@@ -1712,7 +1712,7 @@ class VersionDetalle(ft.Container):
             controls=[],
             spacing=ESPACIADO_NORMAL,
             scroll=ft.ScrollMode.AUTO,
-            height=280,
+            height=400,
             expand=True
         )
 
@@ -1753,7 +1753,7 @@ class VersionDetalle(ft.Container):
         fechas_list.controls.clear()
         
         for fecha in fechas:
-            es_fecha_fija = fecha[2] in ["Fecha de Emisión", "Fecha de Recepción"]
+            es_fecha_fija = fecha[2] in ["Fecha de Emisión", "Fecha de Recepción", "Fecha Emisión Cliente", "Fecha Recepción Cliente"]
             fecha_container = ft.Container(
                 content=ft.Row(
                     controls=[
@@ -1777,7 +1777,7 @@ class VersionDetalle(ft.Container):
                             on_click=lambda e, f=fecha: self.abrir_calendario_fecha(e, f[0], f[2], f[3])
                         ),
                         ft.Container(
-                            visible=fecha[2] not in ["Fecha de Emisión", "Fecha de Recepción"],
+                            visible=fecha[2] not in ["Fecha de Emisión", "Fecha de Recepción","Fecha Emisión Cliente", "Fecha Recepción Cliente"],
                             content=ft.IconButton(
                                 icon=ft.icons.DELETE,
                                 icon_color=COLOR_ERROR,
@@ -1808,6 +1808,18 @@ class VersionDetalle(ft.Container):
             crear_fecha(
                 version_id=version_id,
                 nombre_fecha="Fecha de Recepción",
+                fecha=datetime.datetime.now().strftime('%Y-%m-%d')
+            )
+        if "Fecha Recepción Cliente" not in nombres_fechas:
+            crear_fecha(
+                version_id=version_id,
+                nombre_fecha="Fecha Recepción Cliente",
+                fecha=datetime.datetime.now().strftime('%Y-%m-%d')
+            )
+        if "Fecha Emisión Cliente" not in nombres_fechas:
+            crear_fecha(
+                version_id=version_id,
+                nombre_fecha="Fecha Emisión Cliente",
                 fecha=datetime.datetime.now().strftime('%Y-%m-%d')
             )
 
