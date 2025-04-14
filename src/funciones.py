@@ -3,6 +3,7 @@ import string
 import hashlib
 import os
 import shutil
+from datetime import datetime
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, HRFlowable, Image
@@ -307,7 +308,10 @@ def generar_reporte_proyecto(proyecto_id, output_path=None):
             Paragraph(version_actual['version'][5] or "-", styles['Normal']),  # Transmitall PDVSA
             Paragraph(fecha_emision or "-", styles['Normal']),  # Emisión
             Paragraph(fecha_recepcion or "-", styles['Normal']),  # Recepción
-
+            # Calcular diferencia de días si ambas fechas existen
+            Paragraph(str((datetime.strptime(fecha_recepcion, "%Y-%m-%d") - datetime.strptime(fecha_emision, "%Y-%m-%d")).days) 
+                    if fecha_emision and fecha_recepcion and fecha_emision != "-" and fecha_recepcion != "-" 
+                    else "-", styles['Normal']),  # Diferencia días
             Paragraph(version_actual['version'][6] or "-", styles['Normal']),  # Transmitall Cliente
             Paragraph(fecha_recepcion_cliente or "-", styles['Normal']),  # Fecha Recepción Cliente
             Paragraph(fecha_emision_cliente or "-", styles['Normal']),  # Fecha Emisión Cliente
@@ -327,6 +331,7 @@ def generar_reporte_proyecto(proyecto_id, output_path=None):
         inch*0.6,  # T.PDV
         inch*0.9,  # Emisión
         inch*0.9,  # Recepción
+        inch*0.5,  # Dias
 
         inch*0.6,  # T.Clt
         inch*0.9,  # Fecha Emisión Cliente
@@ -346,6 +351,7 @@ def generar_reporte_proyecto(proyecto_id, output_path=None):
         "TP",        # T.PDV
         "Emisión",       # Emisión
         "Devolución",       # Recepción
+        "Días",             # Diferencia días
 
         "TC",        # T.Clt
         "RecepciónC",        # Fecha Recepción Cliente
@@ -516,7 +522,10 @@ def generar_reporte_rev0(proyecto_id, output_path=None):
             Paragraph(transmitall_pdvsa, styles['Normal']),  # Transmitall PDVSA
             Paragraph(fecha_emision or "-", styles['Normal']),  # Emisión
             Paragraph(fecha_recepcion or "-", styles['Normal']),  # Recepción
-
+            # Calcular diferencia de días si ambas fechas existen
+            Paragraph(str((datetime.strptime(fecha_recepcion, "%Y-%m-%d") - datetime.strptime(fecha_emision, "%Y-%m-%d")).days) 
+                    if fecha_emision and fecha_recepcion and fecha_emision != "-" and fecha_recepcion != "-" 
+                    else "-", styles['Normal']),  # Diferencia días
             Paragraph(transmitall_cliente, styles['Normal']),  # Transmitall Cliente
             Paragraph(fecha_recepcion_cliente or "-", styles['Normal']),  # Recepción
             Paragraph(fecha_emision_cliente or "-", styles['Normal']),  # Emisión
@@ -534,6 +543,7 @@ def generar_reporte_rev0(proyecto_id, output_path=None):
         inch*0.6,  # T.PDV
         inch*1.0,  # Emisión 
         inch*1.0,  # Devolución 
+        inch*0.6,  # Dias
 
         inch*0.6,  # T.Clt
         inch*1.0,  # Emisión 
@@ -549,7 +559,8 @@ def generar_reporte_rev0(proyecto_id, output_path=None):
 
         "TP",        # Transmitall PDVSA
         "Emisión",      
-        "Devolución",      
+        "Devolución",
+        "Días",             # Diferencia días      
 
         "TC",         # Transmitall Cliente
         "RecepciónC",   
