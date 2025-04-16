@@ -82,6 +82,16 @@ class Proyecto(ft.Column):
             ),
             on_click=lambda e: self.download_rev0_report(e)
         )
+
+        disponibilidad_report_btn = ft.TextButton(
+            "Reporte de Disponibilidad",
+            style=ft.ButtonStyle(
+                color=COLOR_TEXTO_BOTON,
+                bgcolor=COLOR_PRIMARIO
+            ),
+            on_click=lambda e: self.download_disponibilidad_report(e)
+        )
+        
         
         cancel_btn = ft.TextButton(
             "Cancelar",
@@ -109,7 +119,7 @@ class Proyecto(ft.Column):
                                text_align=ft.TextAlign.CENTER),
                         ft.Container(height=ESPACIADO_GRANDE),  # Espacio entre texto y botones
                         ft.Row(
-                            controls=[full_report_btn, rev0_report_btn],
+                            controls=[full_report_btn, rev0_report_btn, disponibilidad_report_btn],
                             spacing=ESPACIADO_NORMAL,
                             alignment=ft.MainAxisAlignment.CENTER
                         ),
@@ -177,6 +187,34 @@ class Proyecto(ft.Column):
             dlg = ReusableModal(
                 title="Error",
                 content="No se pudo generar el reporte Rev 0",
+                actions=[ft.TextButton("OK", on_click=lambda e: dlg.close(self.page))],
+                modal=True
+            )
+        dlg.open(self.page)
+        
+    def download_disponibilidad_report(self, e):
+        # Cerrar el modal primero
+        for control in self.page.controls:
+            if isinstance(control, ft.AlertDialog):
+                self.page.close(control)
+                break
+        
+        # Obtener ruta de descarga configurada
+        download_path = self.page.client_storage.get("download_path")
+        
+        # Generar y descargar reporte de disponibilidad
+        result = generar_reporte_disponibilidad(self.id, download_path)
+        if result:
+            dlg = ReusableModal(
+                title="Descarga Exitosa",
+                content=f"Reporte de disponibilidad generado en:\n{result}",
+                actions=[ft.TextButton("OK", on_click=lambda e: dlg.close(self.page))],
+                modal=True
+            )
+        else:
+            dlg = ReusableModal(
+                title="Error",
+                content="No se pudo generar el reporte de disponibilidad",
                 actions=[ft.TextButton("OK", on_click=lambda e: dlg.close(self.page))],
                 modal=True
             )
@@ -1801,26 +1839,26 @@ class VersionDetalle(ft.Container):
             crear_fecha(
                 version_id=version_id,
                 nombre_fecha="Fecha de Emisión",
-                fecha=datetime.datetime.now().strftime('%Y-%m-%d')
+
             )
             
         if "Fecha de Recepción" not in nombres_fechas:
             crear_fecha(
                 version_id=version_id,
                 nombre_fecha="Fecha de Recepción",
-                fecha=datetime.datetime.now().strftime('%Y-%m-%d')
+
             )
         if "Fecha Recepción Cliente" not in nombres_fechas:
             crear_fecha(
                 version_id=version_id,
                 nombre_fecha="Fecha Recepción Cliente",
-                fecha=datetime.datetime.now().strftime('%Y-%m-%d')
+
             )
         if "Fecha Emisión Cliente" not in nombres_fechas:
             crear_fecha(
                 version_id=version_id,
                 nombre_fecha="Fecha Emisión Cliente",
-                fecha=datetime.datetime.now().strftime('%Y-%m-%d')
+
             )
 
     def abrir_calendario_fecha(self, e, fecha_id, nombre_fecha, fecha_actual):

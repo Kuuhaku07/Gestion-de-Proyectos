@@ -604,11 +604,132 @@ def generar_reporte_rev0(proyecto_id, output_path=None):
     except Exception as e:
         print(f"Error al generar el PDF: {e}")
         return None
+def generar_reporte_disponibilidad(proyecto_id, output_path=None):
+    """Genera un PDF con información de disponibilidad de documentos de un proyecto"""
+    # Establecer la ruta de salida predeterminada a Descargas si no se proporciona
+    if output_path is None:
+        output_path = os.path.join(os.path.expanduser("~"), "Downloads")
+    else:
+        # Si se proporciona output_path, asegurarse de que sea un directorio y agregar el nombre del archivo
+        if os.path.isdir(output_path):
+            pass  # Usar como está
+        else:
+            # Si es una ruta de archivo, extraer el directorio y crearlo
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+            return output_path  # Devolver la ruta completa del archivo
     
+    from reportlab.lib.pagesizes import landscape
+    from database import obtener_proyecto_completo
+    
+    # Obtener datos del proyecto
+    datos_proyecto = obtener_proyecto_completo(proyecto_id)
+    if not datos_proyecto:
+        print(f"Error: No se encontró el proyecto con ID {proyecto_id}")
+        return None
+    
+    proyecto = datos_proyecto['proyecto']
+    nombre_archivo = f"Disponibilidad_{proyecto[5]}_{proyecto[1]}.pdf".replace(" ", "_")
+    ruta_completa = os.path.join(output_path, nombre_archivo)
+    os.makedirs(output_path, exist_ok=True)
+    
+    # Crear documento
+    doc = SimpleDocTemplate(ruta_completa, pagesize=landscape(letter))
+    elements = []
+    styles = getSampleStyleSheet()
+
+    # Encabezado
+    try:
+        logo = Image("logo_pdvsa.png", width=1.5*inch, height=0.75*inch)
+        if not os.path.exists("logo_pdvsa.png"):
+            raise FileNotFoundError
+        header_table = Table([
+            [logo, Paragraph("PDVSA<br/>Reporte de Disponibilidad", styles['Heading2'])]
+        ], colWidths=[2*inch, 6*inch])
+        elements.append(header_table)
+    except Exception as e:
+        header_style = styles['Heading1']
+        header_style.textColor = colors.HexColor('#CC0000')
+        header = Paragraph("PDVSA - Reporte de Disponibilidad", header_style)
+        elements.append(header)
+    
+    elements.append(Spacer(1, 0.1*inch))
+    elements.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor('#CC0000'), spaceBefore=5, spaceAfter=15))
+    
+    # Título del reporte
+    titulo_style = styles['Heading1']
+    titulo_style.textColor = colors.HexColor('#003366')
+    titulo_style.alignment = 1
+    titulo = Paragraph(f"Reporte de Disponibilidad: {proyecto[5]} - {proyecto[1]}", titulo_style)
+    elements.append(titulo)
+    
+    # Tabla de documentos con disponibilidad
+    encabezados = [
+        "Código Proyecto",
+        "Código Documento",
+        "Nombre Documento",
+        "Disciplina",
+        "Transmitall Ejecutor",
+        "Transmitall Cliente",
+        "Revisión",
+        "Disponible"
+    ]
+    data = [encabezados]
+    
+    for doc_data in datos_proyecto['documentos']:
+        documento = doc_data['documento']
+        
+        # Buscar la versión que coincida con la revisión del documento
+        version_actual = None
+        for version in doc_data['versiones']:
+            if version['version'][2] == documento[7]:  # Comparar nombre versión con revisión doc
+                version_actual = version
+                break
+        
+        if version_actual:
+            transmitall_ejecutor = version_actual['version'][5] or "-"
+            transmitall_cliente = version_actual['version'][6] or "-"
+            revision = version_actual['version'][2]
+            archivo = version_actual['version'][4]  # Campo archivo
+            
+            # Determinar si está disponible
+            disponible = "Sí" if archivo else "No"
+            
+            # Agregar fila a la tabla
+            data.append([
+                Paragraph(proyecto[5], styles['Normal']),  # Código Proyecto
+                Paragraph(documento[2], styles['Normal']),  # Código Documento
+                Paragraph(documento[3], styles['Normal']),  # Nombre Documento
+                Paragraph(documento[5], styles['Normal']),  # Disciplina
+                Paragraph(transmitall_ejecutor, styles['Normal']),  # Transmitall Ejecutor
+                Paragraph(transmitall_cliente, styles['Normal']),  # Transmitall Cliente
+                Paragraph(revision, styles['Normal']),  # Revisión
+                Paragraph(disponible, styles['Normal'])  # Disponible
+            ])
+    
+    # Crear tabla con los datos
+    tabla = Table(data)
+    estilo_tabla = TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), colors.lightgrey),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.black),
+        ('ALIGN', (0,0), (-1,-1), 'CENTER'),
+        ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0,0), (-1,0), 8),
+        ('GRID', (0,0), (-1,-1), 1, colors.black),
+    ])
+    tabla.setStyle(estilo_tabla)
+    elements.append(tabla)
+    
+    # Generar PDF
+    try:
+        doc.build(elements)
+        return ruta_completa
+    except Exception as e:
+        print(f"Error al generar el PDF: {e}")
+        return None
 
 if __name__ == "__main__":
     # Test PDF generation with sample project ID
-    result = generar_reporte_rev0(1)
+    result = generar_reporte_disponibilidad(1)
     if result:
         print(f"Reporte de proyecto generado como '{result}'")
     else:
