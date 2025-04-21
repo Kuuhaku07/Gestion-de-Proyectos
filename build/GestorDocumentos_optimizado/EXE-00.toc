@@ -90,329 +90,329 @@
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\src\\main.py',
    'PYSOURCE'),
-  ('flet_desktop\\app\\flet\\url_launcher_windows_plugin.dll',
+  ('flet_desktop\\app\\flet\\concrt140.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\url_launcher_windows_plugin.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\vcruntime140d.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vcruntime140d.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\media_kit_native_event_loop.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\media_kit_native_event_loop.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-memory-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-memory-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-stdio-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-stdio-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-file-l1-2-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-file-l1-2-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-timezone-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-timezone-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-profile-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-profile-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\screen_retriever_windows_plugin.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\screen_retriever_windows_plugin.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-math-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-math-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\msvcp140_2.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\msvcp140_2.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\vcruntime140_1d.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vcruntime140_1d.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\libmpv-2.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\libmpv-2.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-runtime-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-runtime-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\screen_brightness_windows_plugin.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\screen_brightness_windows_plugin.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-sysinfo-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-sysinfo-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-console-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-console-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-heap-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-heap-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\msvcp140_codecvt_ids.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\msvcp140_codecvt_ids.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-private-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-private-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-processthreads-l1-1-1.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-processthreads-l1-1-1.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-convert-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-convert-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\msvcp140_atomic_wait.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\msvcp140_atomic_wait.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-synch-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-synch-l1-1-0.dll',
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\concrt140.dll',
    'BINARY'),
   ('flet_desktop\\app\\flet\\api-ms-win-core-console-l1-2-0.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-console-l1-2-0.dll',
    'BINARY'),
-  ('flet_desktop\\app\\flet\\flutter_windows.dll',
+  ('flet_desktop\\app\\flet\\window_manager_plugin.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\flutter_windows.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-process-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-process-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-interlocked-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-interlocked-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-filesystem-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-filesystem-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-string-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-string-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\media_kit_libs_windows_video_plugin.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\media_kit_libs_windows_video_plugin.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\concrt140.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\concrt140.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-heap-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-heap-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\record_windows_plugin.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\record_windows_plugin.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-string-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-string-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-locale-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-locale-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-libraryloader-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-libraryloader-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-time-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-time-l1-1-0.dll',
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\window_manager_plugin.dll',
    'BINARY'),
   ('flet_desktop\\app\\flet\\api-ms-win-crt-utility-l1-1-0.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-utility-l1-1-0.dll',
    'BINARY'),
-  ('flet_desktop\\app\\flet\\zlib.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\zlib.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-fibers-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-fibers-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\vccorlib140.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vccorlib140.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\msvcp140_1.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\msvcp140_1.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\vcruntime140.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vcruntime140.dll',
-   'BINARY'),
   ('flet_desktop\\app\\flet\\vccorlib140d.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vccorlib140d.dll',
    'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-localization-l1-2-0.dll',
+  ('flet_desktop\\app\\flet\\media_kit_libs_windows_video_plugin.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-localization-l1-2-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\permission_handler_windows_plugin.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\permission_handler_windows_plugin.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\vcruntime140_1.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vcruntime140_1.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-processenvironment-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-processenvironment-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-datetime-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-datetime-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-errorhandling-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-errorhandling-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-synch-l1-2-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-synch-l1-2-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-environment-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-environment-l1-1-0.dll',
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\media_kit_libs_windows_video_plugin.dll',
    'BINARY'),
   ('flet_desktop\\app\\flet\\ucrtbased.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\ucrtbased.dll',
    'BINARY'),
-  ('flet_desktop\\app\\flet\\vulkan-1.dll',
+  ('flet_desktop\\app\\flet\\vcruntime140_1d.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vulkan-1.dll',
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vcruntime140_1d.dll',
    'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-file-l1-1-0.dll',
+  ('flet_desktop\\app\\flet\\zlib.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-file-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-file-l2-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-file-l2-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-util-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-util-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\libEGL.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\libEGL.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\d3dcompiler_47.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\d3dcompiler_47.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-rtlsupport-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-rtlsupport-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\vk_swiftshader.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vk_swiftshader.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\libGLESv2.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\libGLESv2.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\msvcp140.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\msvcp140.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\ucrtbase.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\ucrtbase.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\window_manager_plugin.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\window_manager_plugin.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\flet.exe',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\flet.exe',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-debug-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-debug-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-core-processthreads-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-processthreads-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\libc++.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\libc++.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-eventing-provider-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-eventing-provider-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\rive_common_plugin.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\rive_common_plugin.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\audioplayers_windows_plugin.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\audioplayers_windows_plugin.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\media_kit_video_plugin.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\media_kit_video_plugin.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-multibyte-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-multibyte-l1-1-0.dll',
-   'BINARY'),
-  ('flet_desktop\\app\\flet\\api-ms-win-crt-conio-l1-1-0.dll',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-conio-l1-1-0.dll',
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\zlib.dll',
    'BINARY'),
   ('flet_desktop\\app\\flet\\api-ms-win-downlevel-kernel32-l2-1-0.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-downlevel-kernel32-l2-1-0.dll',
    'BINARY'),
+  ('flet_desktop\\app\\flet\\audioplayers_windows_plugin.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\audioplayers_windows_plugin.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\screen_retriever_windows_plugin.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\screen_retriever_windows_plugin.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\media_kit_video_plugin.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\media_kit_video_plugin.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-string-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-string-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\msvcp140.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\msvcp140.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-file-l1-2-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-file-l1-2-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-stdio-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-stdio-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\vulkan-1.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vulkan-1.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\flutter_windows.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\flutter_windows.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-locale-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-locale-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\ucrtbase.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\ucrtbase.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-processthreads-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-processthreads-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-time-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-time-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\libGLESv2.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\libGLESv2.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-runtime-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-runtime-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\libmpv-2.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\libmpv-2.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\screen_brightness_windows_plugin.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\screen_brightness_windows_plugin.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\d3dcompiler_47.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\d3dcompiler_47.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\msvcp140_2.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\msvcp140_2.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-processenvironment-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-processenvironment-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-interlocked-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-interlocked-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-libraryloader-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-libraryloader-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-timezone-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-timezone-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\msvcp140_atomic_wait.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\msvcp140_atomic_wait.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\msvcp140_1.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\msvcp140_1.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\window_to_front_plugin.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\window_to_front_plugin.dll',
+   'BINARY'),
   ('flet_desktop\\app\\flet\\api-ms-win-core-namedpipe-l1-1-0.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-namedpipe-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\flet.exe',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\flet.exe',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-errorhandling-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-errorhandling-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-convert-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-convert-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-file-l2-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-file-l2-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-sysinfo-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-sysinfo-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\permission_handler_windows_plugin.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\permission_handler_windows_plugin.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\rive_common_plugin.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\rive_common_plugin.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-string-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-string-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-eventing-provider-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-eventing-provider-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\media_kit_native_event_loop.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\media_kit_native_event_loop.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-console-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-console-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-localization-l1-2-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-localization-l1-2-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-conio-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-conio-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-process-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-process-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\libEGL.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\libEGL.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-private-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-private-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\record_windows_plugin.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\record_windows_plugin.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-profile-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-profile-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-heap-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-heap-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-processthreads-l1-1-1.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-processthreads-l1-1-1.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-debug-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-debug-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-file-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-file-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-memory-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-memory-l1-1-0.dll',
    'BINARY'),
   ('flet_desktop\\app\\flet\\api-ms-win-core-handle-l1-1-0.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-handle-l1-1-0.dll',
    'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-multibyte-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-multibyte-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\vcruntime140d.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vcruntime140d.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-heap-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-heap-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\vcruntime140.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vcruntime140.dll',
+   'BINARY'),
   ('flet_desktop\\app\\flet\\geolocator_windows_plugin.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\geolocator_windows_plugin.dll',
    'BINARY'),
-  ('flet_desktop\\app\\flet\\window_to_front_plugin.dll',
+  ('flet_desktop\\app\\flet\\api-ms-win-core-synch-l1-2-0.dll',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\window_to_front_plugin.dll',
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-synch-l1-2-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-rtlsupport-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-rtlsupport-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\vccorlib140.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vccorlib140.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-environment-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-environment-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-filesystem-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-filesystem-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-crt-math-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-crt-math-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\libc++.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\libc++.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-util-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-util-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\msvcp140_codecvt_ids.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\msvcp140_codecvt_ids.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-datetime-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-datetime-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\vk_swiftshader.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vk_swiftshader.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-synch-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-synch-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\api-ms-win-core-fibers-l1-1-0.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\api-ms-win-core-fibers-l1-1-0.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\url_launcher_windows_plugin.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\url_launcher_windows_plugin.dll',
+   'BINARY'),
+  ('flet_desktop\\app\\flet\\vcruntime140_1.dll',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\vcruntime140_1.dll',
    'BINARY'),
   ('python312.dll', 'C:\\Program Files\\Python312\\python312.dll', 'BINARY'),
   ('_decimal.pyd',
@@ -506,56 +506,56 @@
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\yaml\\_yaml.cp312-win_amd64.pyd',
    'EXTENSION'),
-  ('api-ms-win-crt-locale-l1-1-0.dll',
+  ('api-ms-win-crt-heap-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-locale-l1-1-0.dll',
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-heap-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-stdio-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-stdio-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-crt-string-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-string-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-crt-filesystem-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-filesystem-l1-1-0.dll',
+  ('VCRUNTIME140.dll',
+   'C:\\Program Files\\Python312\\VCRUNTIME140.dll',
    'BINARY'),
   ('api-ms-win-crt-time-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-time-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-heap-l1-1-0.dll',
+  ('api-ms-win-crt-conio-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-heap-l1-1-0.dll',
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-conio-l1-1-0.dll',
    'BINARY'),
   ('api-ms-win-crt-environment-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-environment-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-conio-l1-1-0.dll',
+  ('api-ms-win-crt-locale-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-conio-l1-1-0.dll',
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-locale-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-process-l1-1-0.dll',
+  ('api-ms-win-crt-math-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-process-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-crt-convert-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-convert-l1-1-0.dll',
-   'BINARY'),
-  ('VCRUNTIME140.dll',
-   'C:\\Program Files\\Python312\\VCRUNTIME140.dll',
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-math-l1-1-0.dll',
    'BINARY'),
   ('api-ms-win-crt-runtime-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-runtime-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-crt-math-l1-1-0.dll',
+  ('api-ms-win-crt-filesystem-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-math-l1-1-0.dll',
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-filesystem-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-string-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-string-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-process-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-process-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-stdio-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-stdio-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-convert-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-crt-convert-l1-1-0.dll',
    'BINARY'),
   ('libcrypto-3.dll',
    'C:\\Program Files\\Python312\\DLLs\\libcrypto-3.dll',
@@ -582,53 +582,9 @@
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\ucrtbase.dll',
    'BINARY'),
-  ('api-ms-win-core-heap-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-heap-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-sysinfo-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-sysinfo-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-kernel32-legacy-l1-1-1.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-kernel32-legacy-l1-1-1.dll',
-   'BINARY'),
-  ('api-ms-win-core-interlocked-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-interlocked-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-sysinfo-l1-2-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-sysinfo-l1-2-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-datetime-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-datetime-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-file-l2-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-file-l2-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-rtlsupport-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-rtlsupport-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-profile-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-profile-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-libraryloader-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-libraryloader-l1-1-0.dll',
-   'BINARY'),
   ('api-ms-win-core-debug-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-debug-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-processenvironment-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-processenvironment-l1-1-0.dll',
    'BINARY'),
   ('api-ms-win-core-file-l1-2-0.dll',
    'C:\\Program Files\\Eclipse '
@@ -638,81 +594,113 @@
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-memory-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-core-localization-l1-2-0.dll',
+  ('api-ms-win-core-file-l2-1-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-localization-l1-2-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-processthreads-l1-1-1.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-processthreads-l1-1-1.dll',
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-file-l2-1-0.dll',
    'BINARY'),
   ('api-ms-win-core-synch-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-synch-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-core-string-l1-1-0.dll',
+  ('api-ms-win-core-sysinfo-l1-2-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-string-l1-1-0.dll',
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-sysinfo-l1-2-0.dll',
    'BINARY'),
-  ('api-ms-win-core-util-l1-1-0.dll',
+  ('api-ms-win-core-localization-l1-2-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-util-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-namedpipe-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-namedpipe-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-file-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-file-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-processthreads-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-processthreads-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-fibers-l1-1-1.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-fibers-l1-1-1.dll',
-   'BINARY'),
-  ('api-ms-win-core-fibers-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-fibers-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-errorhandling-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-errorhandling-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-console-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-console-l1-1-0.dll',
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-localization-l1-2-0.dll',
    'BINARY'),
   ('api-ms-win-core-handle-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-handle-l1-1-0.dll',
    'BINARY'),
+  ('api-ms-win-core-errorhandling-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-errorhandling-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processthreads-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-processthreads-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-kernel32-legacy-l1-1-1.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-kernel32-legacy-l1-1-1.dll',
+   'BINARY'),
+  ('api-ms-win-core-util-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-util-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-sysinfo-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-sysinfo-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-string-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-string-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processenvironment-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-processenvironment-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-interlocked-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-interlocked-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-console-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-console-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-fibers-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-fibers-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-fibers-l1-1-1.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-fibers-l1-1-1.dll',
+   'BINARY'),
+  ('api-ms-win-core-processthreads-l1-1-1.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-processthreads-l1-1-1.dll',
+   'BINARY'),
   ('api-ms-win-core-timezone-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-timezone-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-libraryloader-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-libraryloader-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-datetime-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-datetime-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-profile-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-profile-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-heap-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-heap-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-file-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-namedpipe-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-namedpipe-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-rtlsupport-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.6.7-hotspot\\bin\\api-ms-win-core-rtlsupport-l1-1-0.dll',
    'BINARY'),
   ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\RECORD',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\RECORD',
    'DATA'),
-  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\top_level.txt',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\top_level.txt',
-   'DATA'),
   ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\INSTALLER',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\INSTALLER',
-   'DATA'),
-  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\LICENSE',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\LICENSE',
-   'DATA'),
-  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\REQUESTED',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\REQUESTED',
    'DATA'),
   ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\METADATA',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
@@ -722,130 +710,142 @@
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\WHEEL',
    'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\LICENSE',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\LICENSE',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\top_level.txt',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\top_level.txt',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\REQUESTED',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\REQUESTED',
+   'DATA'),
   ('setuptools\\_vendor\\jaraco\\text\\Lorem ipsum.txt',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\jaraco\\text\\Lorem '
    'ipsum.txt',
    'DATA'),
-  ('flet_desktop\\app\\flet\\data\\flutter_assets\\NOTICES.Z',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\NOTICES.Z',
-   'DATA'),
   ('flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\flutter_map\\lib\\assets\\flutter_map_logo.png',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\flutter_map\\lib\\assets\\flutter_map_logo.png',
-   'DATA'),
-  ('flet_desktop\\app\\flet\\data\\flutter_assets\\FontManifest.json',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\FontManifest.json',
-   'DATA'),
-  ('flet_desktop\\app\\flet\\data\\icudtl.dat',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\icudtl.dat',
-   'DATA'),
-  ('flet_desktop\\app\\flet\\data\\flutter_assets\\AssetManifest.bin',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\AssetManifest.bin',
-   'DATA'),
-  ('flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\media_kit\\assets\\web\\hls1.4.10.js',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\media_kit\\assets\\web\\hls1.4.10.js',
-   'DATA'),
-  ('flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\cupertino_icons\\assets\\CupertinoIcons.ttf',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\cupertino_icons\\assets\\CupertinoIcons.ttf',
-   'DATA'),
-  ('flet_desktop\\app\\flet\\data\\app.so',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\app.so',
-   'DATA'),
-  ('flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\record_web\\assets\\js\\record.fixwebmduration.js',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\record_web\\assets\\js\\record.fixwebmduration.js',
-   'DATA'),
-  ('flet_desktop\\app\\flet\\data\\flutter_assets\\AssetManifest.json',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\AssetManifest.json',
-   'DATA'),
-  ('flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\wakelock_plus\\assets\\no_sleep.js',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\wakelock_plus\\assets\\no_sleep.js',
-   'DATA'),
-  ('flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\record_web\\assets\\js\\record.worklet.js',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\record_web\\assets\\js\\record.worklet.js',
-   'DATA'),
-  ('flet_desktop\\app\\flet\\data\\flutter_assets\\fonts\\MaterialIcons-Regular.otf',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\fonts\\MaterialIcons-Regular.otf',
    'DATA'),
   ('flet_desktop\\app\\flet\\data\\flutter_assets\\shaders\\ink_sparkle.frag',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\shaders\\ink_sparkle.frag',
    'DATA'),
-  ('certifi\\py.typed',
+  ('flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\record_web\\assets\\js\\record.worklet.js',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\certifi\\py.typed',
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\record_web\\assets\\js\\record.worklet.js',
+   'DATA'),
+  ('flet_desktop\\app\\flet\\data\\icudtl.dat',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\icudtl.dat',
+   'DATA'),
+  ('flet_desktop\\app\\flet\\data\\flutter_assets\\FontManifest.json',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\FontManifest.json',
+   'DATA'),
+  ('flet_desktop\\app\\flet\\data\\flutter_assets\\NOTICES.Z',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\NOTICES.Z',
+   'DATA'),
+  ('flet_desktop\\app\\flet\\data\\app.so',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\app.so',
+   'DATA'),
+  ('flet_desktop\\app\\flet\\data\\flutter_assets\\AssetManifest.json',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\AssetManifest.json',
+   'DATA'),
+  ('flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\cupertino_icons\\assets\\CupertinoIcons.ttf',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\cupertino_icons\\assets\\CupertinoIcons.ttf',
+   'DATA'),
+  ('flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\wakelock_plus\\assets\\no_sleep.js',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\wakelock_plus\\assets\\no_sleep.js',
+   'DATA'),
+  ('flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\media_kit\\assets\\web\\hls1.4.10.js',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\media_kit\\assets\\web\\hls1.4.10.js',
+   'DATA'),
+  ('flet_desktop\\app\\flet\\data\\flutter_assets\\AssetManifest.bin',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\AssetManifest.bin',
+   'DATA'),
+  ('flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\record_web\\assets\\js\\record.fixwebmduration.js',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\packages\\record_web\\assets\\js\\record.fixwebmduration.js',
+   'DATA'),
+  ('flet_desktop\\app\\flet\\data\\flutter_assets\\fonts\\MaterialIcons-Regular.otf',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\flet_desktop\\app\\flet\\data\\flutter_assets\\fonts\\MaterialIcons-Regular.otf',
    'DATA'),
   ('certifi\\cacert.pem',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\certifi\\cacert.pem',
    'DATA'),
-  ('setuptools\\_vendor\\wheel-0.45.1.dist-info\\WHEEL',
+  ('certifi\\py.typed',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\wheel-0.45.1.dist-info\\WHEEL',
-   'DATA'),
-  ('websockets-15.0.1.dist-info\\entry_points.txt',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\websockets-15.0.1.dist-info\\entry_points.txt',
-   'DATA'),
-  ('websockets-15.0.1.dist-info\\top_level.txt',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\websockets-15.0.1.dist-info\\top_level.txt',
-   'DATA'),
-  ('setuptools\\_vendor\\wheel-0.45.1.dist-info\\METADATA',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\wheel-0.45.1.dist-info\\METADATA',
-   'DATA'),
-  ('setuptools\\_vendor\\wheel-0.45.1.dist-info\\REQUESTED',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\wheel-0.45.1.dist-info\\REQUESTED',
-   'DATA'),
-  ('websockets-15.0.1.dist-info\\WHEEL',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\websockets-15.0.1.dist-info\\WHEEL',
-   'DATA'),
-  ('websockets-15.0.1.dist-info\\METADATA',
-   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\websockets-15.0.1.dist-info\\METADATA',
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\certifi\\py.typed',
    'DATA'),
   ('setuptools\\_vendor\\wheel-0.45.1.dist-info\\LICENSE.txt',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\wheel-0.45.1.dist-info\\LICENSE.txt',
    'DATA'),
-  ('websockets-15.0.1.dist-info\\INSTALLER',
+  ('websockets-15.0.1.dist-info\\LICENSE',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\websockets-15.0.1.dist-info\\INSTALLER',
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\websockets-15.0.1.dist-info\\LICENSE',
    'DATA'),
-  ('setuptools\\_vendor\\wheel-0.45.1.dist-info\\INSTALLER',
+  ('websockets-15.0.1.dist-info\\WHEEL',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\wheel-0.45.1.dist-info\\INSTALLER',
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\websockets-15.0.1.dist-info\\WHEEL',
    'DATA'),
   ('setuptools\\_vendor\\wheel-0.45.1.dist-info\\RECORD',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\wheel-0.45.1.dist-info\\RECORD',
    'DATA'),
-  ('websockets-15.0.1.dist-info\\LICENSE',
+  ('setuptools\\_vendor\\wheel-0.45.1.dist-info\\METADATA',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
-   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\websockets-15.0.1.dist-info\\LICENSE',
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\wheel-0.45.1.dist-info\\METADATA',
+   'DATA'),
+  ('setuptools\\_vendor\\wheel-0.45.1.dist-info\\INSTALLER',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\wheel-0.45.1.dist-info\\INSTALLER',
+   'DATA'),
+  ('websockets-15.0.1.dist-info\\METADATA',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\websockets-15.0.1.dist-info\\METADATA',
+   'DATA'),
+  ('websockets-15.0.1.dist-info\\top_level.txt',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\websockets-15.0.1.dist-info\\top_level.txt',
+   'DATA'),
+  ('websockets-15.0.1.dist-info\\INSTALLER',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\websockets-15.0.1.dist-info\\INSTALLER',
    'DATA'),
   ('setuptools\\_vendor\\wheel-0.45.1.dist-info\\entry_points.txt',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\wheel-0.45.1.dist-info\\entry_points.txt',
    'DATA'),
+  ('setuptools\\_vendor\\wheel-0.45.1.dist-info\\REQUESTED',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\wheel-0.45.1.dist-info\\REQUESTED',
+   'DATA'),
+  ('setuptools\\_vendor\\wheel-0.45.1.dist-info\\WHEEL',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\setuptools\\_vendor\\wheel-0.45.1.dist-info\\WHEEL',
+   'DATA'),
   ('websockets-15.0.1.dist-info\\RECORD',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\websockets-15.0.1.dist-info\\RECORD',
+   'DATA'),
+  ('websockets-15.0.1.dist-info\\entry_points.txt',
+   'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
+   'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\websockets-15.0.1.dist-info\\entry_points.txt',
    'DATA'),
   ('base_library.zip',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
@@ -854,7 +854,7 @@
  [],
  False,
  False,
- 1744343137,
+ 1745242901,
  [('runw.exe',
    'C:\\Users\\Ulises\\Documents\\Ulises\\Odiseo Code\\Programa Sistema de '
    'informacion\\SDI-DocumentosLisduer\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\runw.exe',
