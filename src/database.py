@@ -537,8 +537,8 @@ def obtener_proyecto_completo(proyecto_id):
         conn.close()
         return None
     
-    # Obtener documentos del proyecto
-    cursor.execute("SELECT * FROM Documentos WHERE proyecto_id = ?", (proyecto_id,))
+    # Obtener documentos del proyecto con orden consistente por código
+    cursor.execute("SELECT * FROM Documentos WHERE proyecto_id = ? ORDER BY codigo ASC", (proyecto_id,))
     documentos = cursor.fetchall()
     
     resultado = {

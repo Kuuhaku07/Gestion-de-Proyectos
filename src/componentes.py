@@ -66,7 +66,7 @@ class Proyecto(ft.Column):
     def download_clicked(self, e):
         # Crear botones para cada tipo de reporte
         full_report_btn = ft.TextButton(
-            "Reporte Completo",
+            "Reporte de Trazabilidad",
             style=ft.ButtonStyle(
                 color=COLOR_TEXTO_BOTON,
                 bgcolor=COLOR_BOTON
@@ -1125,7 +1125,7 @@ class DocumentosApp(ft.Column):
                                 subproyecto_field,
                                 fase_field
                             ],
-                            spacing=ESPACIADO_NORMAL,
+                            spacing=ESPACIADO_PEQUENO,
                             alignment=ft.MainAxisAlignment.CENTER,
                             width=350,
                             scroll=ft.ScrollMode.AUTO
@@ -1133,7 +1133,7 @@ class DocumentosApp(ft.Column):
                     ],
                     alignment=ft.MainAxisAlignment.CENTER
                 ),
-                ft.Container(height=ESPACIADO_GRANDE),
+                ft.Container(height=ESPACIADO_NORMAL),
                 ft.Row(
                     controls=[accept_button, cancel_button],
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN
@@ -1434,7 +1434,7 @@ class DocumentoDetalle(ft.Container):
         super().__init__()
         self.scroll = ft.ScrollMode.AUTO
         self.width = 400
-        self.height = 300
+        self.height = 250
         self.border = ft.border.all(1, COLOR_BORDE)
         self.border_radius = ft.border_radius.all(BORDE_RADIO_GRANDE)
         self.padding = ESPACIADO_NORMAL
@@ -1653,14 +1653,14 @@ class DocumentoDetalle(ft.Container):
                                 fase_field,
                                 observaciones_field
                             ],
-                            spacing=10,
+                            spacing=ESPACIADO_PEQUENO,
                             alignment=ft.MainAxisAlignment.CENTER,
                             width=350
                         ),
                     ],
                     alignment=ft.MainAxisAlignment.CENTER
                 ),
-                ft.Container(height=20),
+                ft.Container(height=ESPACIADO_NORMAL),
                 ft.Row(
                     controls=[accept_button, cancel_button],
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN
@@ -1730,7 +1730,7 @@ class VersionDetalle(ft.Container):
         super().__init__()
         self.scroll = ft.ScrollMode.AUTO
         self.width = 400
-        self.height = 400
+        self.height = 350
         self.border = ft.border.all(1, COLOR_BORDE)
         self.border_radius = ft.border_radius.all(BORDE_RADIO_GRANDE)
         self.padding = ESPACIADO_NORMAL

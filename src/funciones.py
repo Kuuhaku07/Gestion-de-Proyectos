@@ -146,7 +146,7 @@ def generar_reporte_proyecto(proyecto_id, output_path=None):
     titulo_style.fontSize = 18
     titulo_style.leading = 24  # Espaciado entre líneas
     titulo = Paragraph(
-        f"Reporte del Proyecto: {proyecto[5]} - {proyecto[1]} (Cliente: {proyecto[4]})", 
+        f"Reporte de Trazabilidad: {proyecto[5]} - {proyecto[1]} (Cliente: {proyecto[4]})", 
         titulo_style
     )
     elements.append(titulo)
